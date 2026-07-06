@@ -1,0 +1,106 @@
+// importante
+* { all: unset; }
+window { background-color: transparent; }
+// COLORS
+$bg-opaque:          #110f18;
+$bg-transparent:     rgba(17, 15, 24, 0.75);
+$bg-selected:        #241f31;
+$text-normal:        #a5a1b8;
+$text-selected:      #cba6f7;
+$accent-line:        #f5c2e7;
+$border-window:      rgba(203, 166, 247, 0.2);
+$border-element:     rgba(203, 166, 247, 0.3);
+$border-art:         rgba(245, 194, 231, 0.15);
+$separator-color:    rgba(245, 194, 231, 0.15);
+
+.music-box {
+  background-color: $bg-transparent;
+  border: 5px solid $border-window;
+  border-radius: 12px;
+  padding: 15px;
+}
+
+.top-section {
+  margin-bottom: 5px;
+
+  .album-art {
+    background-color: $bg-opaque;
+    border: 1px solid $border-art;
+    border-radius: 8px;
+    min-width: 80px;
+    min-height: 80px;
+    margin-right: 15px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .music-info {
+    .title {
+      font-size: 14px;
+      font-weight: bold;
+      color: $text-selected;
+    }
+
+    .artist {
+      font-size: 12px;
+      color: $text-normal;
+    }
+  }
+}
+
+.separator {
+  background-color: $separator-color;
+  min-height: 1px;
+}
+
+.controls-section {
+
+  .buttons {
+    margin-bottom: 12px;
+
+    button {
+      font-size: 18px;
+      color: $text-normal;
+      background: none;
+      border: none;
+      padding: 4px 12px;
+
+      &:hover {
+        color: $text-selected;
+        background-color: $bg-selected;
+        border-radius: 8px;
+      }
+    }
+  }
+
+  .progress-bar-container {
+    .time {
+      font-size: 11px;
+      color: #575268;
+      min-width: 40px;
+    }
+
+    scale {
+      margin: 0 10px;
+
+      trough {
+        background-color: $bg-opaque;
+        border-radius: 8px;
+        min-height: 6px;
+
+        highlight {
+          background-color: $accent-line;
+          border-radius: 8px;
+        }
+      }
+
+      slider {
+        background-color: $text-selected;
+        border-radius: 5px;
+        min-height: 10px;
+        min-width: 10px;
+      }
+    }
+  }
+}

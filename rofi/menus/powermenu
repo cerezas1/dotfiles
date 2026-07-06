@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+chosen=$(printf " MikuOff\n󰜉 Mikuuu...\n󰈆 ByeMiku" | rofi -dmenu -i -p "  " -theme "$HOME/.config/rofi/themes/PurpleMiku.rasi")
+case $chosen in
+    " MikuOff")
+        systemctl poweroff
+        ;;
+    "󰜉 Mikuuu...")
+        systemctl reboot
+        ;;
+    "󰈆 ByeMiku")
+        hyprctl dispatch exit
+     ;;
+esac

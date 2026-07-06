@@ -1,0 +1,75 @@
+/* PurpleMiku Edition */
+
+* {
+    bg-opaque:          #110f18;
+    bg-transparent:     rgba (17, 15, 24, 0.85);
+    bg-selected:        #241f31;
+
+    text-normal:        #a5a1b8;
+    text-selected:      #cba6f7;
+    accent-line:        #f5c2e7;
+    border-radius:      12px;
+    font: "JetBrainsMono Nerd Font 11";
+}
+
+window {
+    location:         center;
+    anchor:           center;
+    width:            500px;
+
+    background-color: @bg-transparent;
+
+    border:           3px;
+    border-color:     rgba (203,166,247,0.20);
+    border-radius:    16px;
+    padding:          18px;
+    children:         [ mainbox ];
+}
+
+mainbox {
+    orientation:      horizontal;
+    background-color: transparent;
+    spacing:          10px;
+}
+
+listview {
+    columns:          3;
+    lines:            1;
+    spacing:          8px;
+    background-color: transparent;
+    border:           0px;
+}
+
+element {
+    padding:          10px;
+    border-radius:    10px;
+    background-color: transparent;
+    text-color:       @text-normal;
+//    transition:       200ms;
+}
+
+element selected {
+    background-color: @bg-selected;
+    text-color:       @text-selected;
+    border:           1px;
+    border-color:     rgba (203,166,247,0.30);
+}
+
+element-text {
+    horizontal-align: 0.5;
+    vertical-align:   0.5;
+    text-color: inherit;
+    background-color: transparent;
+}
+
+inputbar {
+    enabled: false;
+}
+
+prompt {
+    enabled: false;
+}
+
+element-icon {
+    enabled: false;
+}

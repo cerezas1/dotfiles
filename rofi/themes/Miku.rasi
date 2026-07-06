@@ -1,0 +1,99 @@
+* {
+    bg:            rgba (193, 255, 231, 0.50);
+    bg-alt:        rgba (174, 242, 222, 0.85);
+    fg:            #DBB8F2;
+    miku:	   #31DEAC;
+    cherry:        #D1829B;
+    border-color:  #C2E59C;
+    border-radius: 20px;
+    border-width:  2px; 
+}
+
+window {
+    location:      center;
+    anchor:        center;
+    width:         850px;
+
+    background-color: @bg;
+    border:           @border-width;
+    border-color:     @border-color;
+    border-radius:    30px;
+    children:         [ mainbox ];
+    clip-to-boundary: true;
+}
+
+mainbox {
+    orientation: horizontal;
+    padding: 20px;
+    spacing: 20px;
+    background-color: transparent;
+    children: [ sub-box, sidebar-image ];
+}
+
+sub-box {
+    orientation:      vertical;
+    spacing:          10px;
+    background-color: transparent;
+    children:         [ inputbar, listview ]; 
+}
+
+sidebar-image {
+    width:            250px;
+    expand:	      false;
+    border-radius:    30px;
+    background-image: url("/home/cereza/descargas/1217111.jpg", height);
+}
+
+inputbar {
+    padding:          10px;
+    spacing:          8px;
+    border:	      0px;
+    border-radius:    15px;
+    clip-to-boundary: true;
+}
+
+prompt {
+    text-color:       @cherry;
+}
+
+entry {
+    text-color:       @cherry;
+    placeholder-color: @cherry; 
+    placeholder:       "Buscar...";
+}
+
+listview {
+    lines:            8;
+    columns:          1;
+    spacing:          4px;
+    background-color: transparent;
+    border:           0px;
+    padding:	      4px;
+}
+
+element {
+    padding:          8px;
+    border-radius:    22px;
+    border:	      0px;
+    text-color:       @miku;
+    background-color: transparent;
+    clip-to-boundary: true;
+}
+
+element selected {
+    background-color: @bg-alt;
+    text-color:       @cherry;
+    border:	      0px;
+    border-radius:    12px;
+    clip-to-boundary: true;
+}
+
+element-text, element-icon {
+    background-color: transparent;
+    text-color:       inherit;
+}
+
+element-icon {
+    size: 24px;
+    cursor: pointer;
+}

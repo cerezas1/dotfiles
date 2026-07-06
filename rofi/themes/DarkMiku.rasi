@@ -1,0 +1,109 @@
+/* DarkMiku - PurpleMiku Edition */
+
+* {
+    bg-opaque:          #110f18;
+    bg-transparent:     rgba (17, 15, 24, 0.85);
+    bg-selected:        #241f31;
+
+    text-normal:        #a5a1b8;
+    text-pur:		#2e1839;
+    text-selected:      #cba6f7;
+    accent-line:        #f5c2e7;
+    
+    font: "JetBrainsMono Nerd Font 11";
+    border-width:       2px;
+}
+
+window {
+    location:           center;
+    anchor:             center;
+    width:              850px; 
+
+    background-color:   @bg-transparent; 
+    border:             @border-width;
+    border-color:       @accent-line;    
+    border-radius:      30px;
+    children:           [ mainbox ];
+    clip-to-boundary:   true;
+}
+
+mainbox {
+    orientation:        horizontal;
+    padding:            20px;
+    spacing:            20px;
+    background-color:   transparent;
+    children:           [ sub-box, sidebar-image ];
+}
+
+sub-box {
+    orientation:        vertical;
+    spacing:            10px;
+    background-color:   transparent;
+    children:           [ inputbar, listview ];
+}
+
+sidebar-image {
+    width:              250px;
+    expand:             false;
+    border-radius:      30px;
+    background-image:   url("/home/cereza/descargas/purple.jpg", height);
+}
+
+inputbar {
+    padding:            10px;
+    spacing:            8px;
+    border:             0px;
+    border-radius:      15px;
+    clip-to-boundary:   true;
+    background-color:   @bg-selected;
+    background-color:   @bg-selected;
+    text-color:         @text-normal;
+}
+
+prompt {
+    enabled:            false;
+}
+
+entry {
+    background-color:   transparent;
+    text-color:         @text-selected;
+    placeholder-color:  rgba (165, 161, 184, 0.5);
+    placeholder:        "I see it....";
+}
+
+listview {
+    lines:              8;
+    columns:            1;
+    spacing:            4px;
+    background-color:   transparent;
+    border:             0px;
+    padding:            4px;
+}
+
+element {
+    padding:            8px;
+    border-radius:      22px;
+    background-color:   transparent;
+    border:             0px;
+    text-color:         @text-normal;
+    clip-to-boundary:   true;
+}
+
+element selected {
+    background-color:   @bg-selected;
+    text-color:         @text-selected;
+    border:             1px;
+    border-color:       rgba (203,166,247,0.30);
+    border-radius:      12px;
+    clip-to-boundary:   true;
+}
+
+element-text, element-icon {
+    background-color:   transparent;
+    text-color:         inherit;
+}
+
+element-icon {
+    size:               24px;
+    cursor:             pointer;
+}

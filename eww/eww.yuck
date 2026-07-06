@@ -1,0 +1,81 @@
+(defpoll music_title   :interval "1s" "playerctl metadata title 2>/dev/null || echo 'Sin reproducción'")
+(defpoll music_artist  :interval "1s" "playerctl metadata artist 2>/dev/null || echo ''")
+(defpoll music_status  :interval "1s" "playerctl status 2>/dev/null || echo 'Stopped'")
+(defpoll music_position :interval "1s" "playerctl position --format '{{ duration(position) }}' 2>/dev/null || echo '0:00'")
+(defpoll music_length   :interval "1s" "playerctl metadata --format '{{ duration(mpris:length) }}' 2>/dev/null || echo '0:00'")
+(defpoll music_percent  :interval "1s" :initial "0"
+  "awk -v pos=\"$(playerctl position 2>/dev/null || echo 0)\" -v len=\"$(playerctl metadata mpris:length 2>/dev/null || echo 0)\" 'BEGIN { if (len > 0) print int((pos * 100000000) / len); else print 0 }' 2>/dev/null || echo 0")
+
+(defpoll music_art :interval "2s"
+  "bash -c 'url=$(playerctl metadata mpris:artUrl 2>/dev/null); \
+    if [[ $url == file://* ]]; then echo \"\${url#file://}\"; \
+    elif [[ -n $url ]]; then curl -s -o /tmp/eww_art.jpg \"$url\" && echo /tmp/eww_art.jpg; \
+    else echo \"\"; fi'")
+
+(defwindow music_popup
+   :monitor 0
+   :geometry (geometry :x "0%" :y "0%" :width "650px" :height "220px" :anchor "top center")
+   :stacking "fg"
+   :windowtype "normal"
+   :wm-ignore true
+   (reproductor))
+
+(defwidget reproductor []
+  (box :class "music-box"
+       :orientation "v"
+       :space-evenly false
+
+    (box :class "top-section"
+         :orientation "h"
+         :space-evenly false
+
+      (box :class "album-art"
+           :style "background-image: url('${music_art}');"
+      )
+
+      (box :class "music-info"
+           :orientation "v"
+           :space-evenly false
+           :hexpand true
+           :valign "center"
+        (label :class "title"
+               :text "${music_title}"
+               :halign "start"
+               :limit-width 30)
+        (label :class "artist"
+               :text "${music_artist}"
+               :halign "start"
+               :limit-width 30)
+      )
+    )
+
+    (box :class "separator")
+
+    (box :class "controls-section"
+         :orientation "v"
+         :space-evenly false
+
+      (box :class "buttons"
+           :orientation "h"
+           :halign "center"
+           :space-evenly false
+        (button :onclick "playerctl previous" "⏮")
+        (button :onclick "playerctl play-pause"
+                "${music_status == "Playing" ? "⏸" : "▶"}")
+        (button :onclick "playerctl next" "⏭")
+      )
+
+      (box :class "progress-bar-container"
+           :orientation "h"
+           :space-evenly false
+        (label :class "time" :text "${music_position}")
+        (scale :min 0
+               :max 100
+               :value "${music_percent}"
+               :hexpand true
+               :onchange "playerctl position $(( {} * $(playerctl metadata mpris:length 2>/dev/null || echo 0) / 100000000 ))")
+        (label :class "time" :text "${music_length}")
+      )
+    )
+  )
+)

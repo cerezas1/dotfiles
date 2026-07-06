@@ -1,0 +1,25 @@
+@theme "/home/cereza/.config/rofi/themes/purp.rasi"
+
+window {
+    width: 360px;
+}
+
+listview {
+    lines: 3;
+}
+
+inputbar {
+    enabled: false;
+}
+
+message {
+    enabled: true;
+}
+
+element {
+    padding: 10px;
+}
+
+element selected {
+    border-radius: 12px;
+}

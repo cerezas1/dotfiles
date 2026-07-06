@@ -1,0 +1,80 @@
+/* Tema Rofi: Minimal Dark Purple */
+
+* {
+   
+    bg-opaque:          #110f18;
+    bg-transparent:     rgba (17, 15, 24, 0.75);
+    bg-selected:        #241f31;
+    
+    text-normal:        #a5a1b8;
+    text-selected:      #cba6f7;
+    accent-line:        #f5c2e7;
+    
+    font:               "JetBrainsMono Nerd Font 11";
+    background-color:   transparent;
+    text-color:         @text-normal;
+}
+
+window {
+    background-color:   @bg-transparent;
+    text-color:         @text-normal;
+    border:             5px;
+    border-color:       rgba (203, 166, 247, 0.2); 
+    border-radius:      12px;
+    width:              320px;
+    padding:            15px;
+}
+
+mainbox {
+    children:           [ inputbar, listview ];
+    spacing:            10px;
+}
+
+inputbar {
+    background-color:   @bg-opaque;
+    border-radius:      8px;
+    padding:            8px 12px;
+    children:           [ prompt, entry ];
+    border:             1px;
+    border-color:       rgba (245, 194, 231, 0.15);
+}
+
+prompt {
+    text-color:         @accent-line;
+    margin:             0px 8px 0px 0px;
+}
+
+entry {
+    text-color:         @text-normal;
+    placeholder:        "Mis ojitos...";
+    placeholder-color:  #575268;
+}
+
+listview {
+    fixed-height:       true;
+    lines:              4;
+    scrollbar:          false;
+    spacing:            5px;
+}
+
+element {
+    padding:            8px;
+    border-radius:      8px;
+}
+
+element normal.normal {
+    background-color:   transparent;
+    text-color:         @text-normal;
+}
+
+element alternate.normal {
+    background-color:   transparent;
+    text-color:         @text-normal;
+}
+
+element selected.normal {
+    background-color:   @bg-selected;
+    text-color:         @text-selected;
+    border:             1px;
+    border-color:       rgba (203, 166, 247, 0.3);
+}
