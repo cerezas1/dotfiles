@@ -1,0 +1,16 @@
+# ~/.config/mako/config
+font=JetBrainsMono Nerd Font 10
+
+# Estilo de la ventana de notificación
+background-color=#1a1525c0
+text-color=#cba6f7
+border-color=#cba6f766
+border-size=2
+border-radius=8
+
+# Duración (5 segundos)
+default-timeout=5000
+
+[urgency=high]
+border-color=#f38ba8
+text-color=#f38ba8
