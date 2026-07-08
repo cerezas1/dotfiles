@@ -1,0 +1,5 @@
+alias ls='eza --icons'
+alias ll='eza -lh --icons --git'
+alias la='eza -lah --icons --git'
+alias cls='clear'
+alias cat='bat'
