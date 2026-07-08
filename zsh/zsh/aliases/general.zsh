@@ -1,5 +1,5 @@
-alias ls='eza --icons'
-alias ll='eza -lh --icons --git'
-alias la='eza -lah --icons --git'
+alias ls='eza --color=always --icons=always --group-directories-first --grid'
+alias ll='eza -lh --color=always --icons=always --group-directories-first --git --time-style=relative --header'
+alias lt='eza --tree --level=2 --color=always --icons=always --group-directories-first'
 alias cls='clear'
 alias cat='bat'
