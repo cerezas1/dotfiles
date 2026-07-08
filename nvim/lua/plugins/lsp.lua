@@ -31,13 +31,6 @@ return {
       "hrsh7th/cmp-nvim-lsp", -- conecta el LSP con el autocompletado (plugins/cmp.lua)
     },
     config = function()
-      -- Desde Neovim 0.11, existe una API nativa de LSP (vim.lsp.config /
-      -- vim.lsp.enable). nvim-lspconfig ahora solo aporta las
-      -- definiciones "de fábrica" de cada servidor; nosotros los
-      -- activamos con esta API en vez del viejo
-      -- require("lspconfig").xxx.setup({...}), que ya está deprecado
-      -- (por eso viste ese aviso amarillo al abrir nvim).
-
       -- "capabilities" le avisa a cada servidor qué tan avanzado es
       -- nuestro cliente de autocompletado, para que mande mejores sugerencias
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -70,8 +63,6 @@ return {
         end,
       })
 
-      -- Estética minimalista para los diagnósticos: sin texto flotante
-      -- gigante a la derecha de cada línea, solo un signo discreto
       vim.diagnostic.config({
         virtual_text = false,
         signs = true,
