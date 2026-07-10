@@ -1,0 +1,13 @@
+[SddmGreeterTheme]
+Name=MiTema
+Description=Tema personalizado para SDDM
+Author=Usuario
+Copyright=2026, Usuario
+License=MIT
+Type=sddm-theme
+Version=1.0
+Website=
+MainScript=Main.qml
+ConfigFile=Themes/theme.conf
+TranslationsDirectory=translations
+FontsDirectory=Assets/Fonts

@@ -1,24 +1,11 @@
 ## Instalación
-
-1. Respalda tu config actual por si acaso:
-   ```bash
-   mv ~/.config/nvim ~/.config/nvim.bak
-   ```
-2. Copia esta carpeta a `~/.config/nvim`.
-3. Abre `nvim`. La primera vez vas a ver un montón de texto pasar rápido:
-   es `lazy.nvim` clonándose a sí mismo y después instalando cada plugin
-   listado en `lua/plugins/`. Espera a que termine (unos segundos) y
-   reinicia nvim una vez.
-4. Corre `:checkhealth` para confirmar que no falta nada (por ejemplo,
-   si no tienes `git`, `ripgrep` o un compilador de C, algunas cosas
-   fallan — el mensaje de error te dice exactamente qué falta).
-
 ### Dependencias del sistema (fuera de nvim)
 - `git` (para que lazy.nvim clone los plugins)
 - `ripgrep` (`rg`) — lo usa Telescope para `live_grep`
 - Un compilador de C (`gcc`/`clang`) — lo necesita treesitter para compilar los parsers
 - Una Nerd Font instalada 
 ## Estructura
+ ```
 nvim/
 ├── init.lua                  -- solo hace 3 "require", el punto de entrada
 ├── lua/
@@ -36,7 +23,7 @@ nvim/
 │       ├── gitsigns.lua      -- signos de git en el margen
 │       ├── which-key.lua     -- popup que recuerda tus atajos
 │       └── oil.lua           -- explorador de archivos minimalista
-
+ ```
 Cada archivo dentro de `lua/plugins/` es un plugin independiente. Para
 agregar uno nuevo en el futuro: creas un archivo `lua/plugins/lo-que-sea.lua`
 que devuelva una tabla `{ "usuario/repo", opts = {...} }` y listo, lazy.nvim
