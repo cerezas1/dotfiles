@@ -1,0 +1,41 @@
+;[general]
+# Cuadros por segundo para mantener la fluidez de renderizado
+;framerate = 60
+;sensitivity = 100
+# Ponlo en 0 para que ocupe todo el ancho de forma automática
+;bars = 0
+# --- Barras delgadas ---
+# Reducimos el ancho a 2 píxeles y el espacio a 1 píxel para un look muy fino
+;bar_width = 2
+;bar_spacing = 1
+;[input]
+;method = pulse
+;source = auto
+;[output]
+# Mantiene los picos flotando un breve instante
+;show_idle_bar_heads = 1
+
+[color]
+gradient = 1
+gradient_count = 8
+gradient_color_1 = '#ebc9ff' 
+gradient_color_2 = '#e6bbff' 
+gradient_color_3 = '#e0aaff' 
+gradient_color_4 = '#c77dff' 
+gradient_color_5 = '#9d4ed0' 
+gradient_color_6 = '#782cbf' 
+gradient_color_7 = '#5a189a' 
+gradient_color_8 = '#3c096c' 
+
+;[smoothing]
+# El filtro monstercat ayuda a que las barras adyacentes compartan inercia
+;monstercat = 1
+# --- Físicas naturales y amortiguadas ---
+# Aumentamos la gravedad (por defecto es 1.0). Al subirla a 1.6 combinada con el 
+# valor integral, la caída se vuelve pesada, suave y reduce el rebote rápido.
+;gravity = 1.6
+# Reducimos el valor integral (por defecto ~0.15). Al bajarlo a 0.08, los cambios 
+# de ritmo no se aplican de golpe, obligando a las barras a subir y bajar de forma progresiva.
+;integral = 0.08
+# Filtrado de ruido sutil para ignorar frecuencias fantasma
+;noise_reduction = 0.85
