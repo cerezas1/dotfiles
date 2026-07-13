@@ -39,8 +39,10 @@ Subir y Bajar Volumen
 |  Bajar Volumen       |  'F11'  |
 
 Cambiar Wallpaper
+
 |:----------|:---------|
 |   Selected wallpaper |   'Mod + W'   |
 |   Next wallpaper     |   'Mod + B'   |
 |   Prev wallpaper     |   'Mod + N'   |
+
 </details>
