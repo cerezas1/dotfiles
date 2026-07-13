@@ -1,11 +1,11 @@
-My configuration in ARCH + HYPRLAND 0.55.4
+# My configuration in ARCH + HYPRLAND 0.55.4
 
 
 git@github.com:cerezas1/dotfiles.git 
 
 
 <details>
-    KEYBINDS
+## KEYBINDS <br/>
 <summary> Mis atajos de teclado generales</summary>
 
 |   Acion   |   atajo   |
@@ -16,7 +16,7 @@ git@github.com:cerezas1/dotfiles.git
 |   Selected wallpaper  |   'Mod + W'   |
 |   PowerMenu           |   'Mod + Esc' |
 
-<p> Cambiar Foco </p>
+Cambiar Foco</br>
 
 |   Accion  |   Atajo   |
 |:----------|:----------|
@@ -24,5 +24,4 @@ git@github.com:cerezas1/dotfiles.git
 | Foco a la Dercha      |   'Mod + arrowrigth'  |
 | Foco hacia Arriba     |   'Mod + arrowup'     |
 | Foco hacia Abajo      |   'Mod + arrowdown'   |
-|-----------|-----------|
 </details>
