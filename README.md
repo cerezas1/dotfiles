@@ -1,6 +1,8 @@
 # My configuration in ARCH + HYPRLAND 0.55.4
 
+## Clonación de Repositorio
 `git clone https://github.com/cerezas1/dotfiles.git`
+## Imágenes del escitorio
 
 ## K E Y B I N D S
 
