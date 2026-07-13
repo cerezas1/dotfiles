@@ -3,9 +3,8 @@
 
 git@github.com:cerezas1/dotfiles.git 
 
-
+## K E Y B I N D S
 <details>
-## KEYBINDS
 <summary> Mis atajos de teclado generales</summary>
 
 |   Acion   |   atajo   |
