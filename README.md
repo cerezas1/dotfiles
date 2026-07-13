@@ -16,7 +16,7 @@ git@github.com:cerezas1/dotfiles.git
 |   Selected wallpaper  |   'Mod + W'   |
 |   PowerMenu           |   'Mod + Esc' |
 |-----------|-----------|
-|Cambiar Foco           |
+    Cambiar Foco
 | Foco a la izquierda   |   'Mod + arrowleft'   |
 | Foco a la Dercha      |   'Mod +arrowrigth'   |
 | Foco hacia Arriba     |   'Mod + arrowup'     |
