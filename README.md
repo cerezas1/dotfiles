@@ -1,7 +1,9 @@
 # My configuration in ARCH + HYPRLAND 0.55.4
-git@github.com:cerezas1/dotfiles.git 
+
+git clone https://github.com/cerezas1/dotfiles.git
 
 ## K E Y B I N D S
+
 <details>
 <summary> Mis atajos de teclado generales</summary>
 
