@@ -12,8 +12,8 @@ git clone https://github.com/cerezas1/dotfiles.git
 |   Abrir Terminal      |   'Mod + Q'   |
 |   Cerrar Ventana      |   'Mod + C'   |
 |   Rofi Menu           |   'Mod + R'   |
-|   Selected wallpaper  |   'Mod + W'   |
 |   PowerMenu           |   'Mod + Esc' |
+|   Dolphin             |   'Mod + E'   |
 
 Cambiar Foco
 
@@ -37,4 +37,10 @@ Subir y Bajar Volumen
 |:----------|:---------|
 |  Subir Volumen       |  'F12'  |
 |  Bajar Volumen       |  'F11'  |
+
+Cambiar Wallpaper
+|:----------|:---------|
+|   Selected wallpaper |   'Mod + W'   |
+|   Next wallpaper     |   'Mod + B'   |
+|   Prev wallpaper     |   'Mod + N'   |
 </details>
