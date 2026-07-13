@@ -1,5 +1,6 @@
 # My configuration in ARCH + HYPRLAND 0.55.4
 
+`rgb(9, 105, 218) Hi`
 
 git@github.com:cerezas1/dotfiles.git 
 
@@ -15,7 +16,7 @@ git@github.com:cerezas1/dotfiles.git
 |   Selected wallpaper  |   'Mod + W'   |
 |   PowerMenu           |   'Mod + Esc' |
 
-Cambiar Foco</br>
+Cambiar Foco
 
 |   Accion  |   Atajo   |
 |:----------|:----------|
