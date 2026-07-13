@@ -17,7 +17,8 @@ git@github.com:cerezas1/dotfiles.git
 |   PowerMenu           |   'Mod + Esc' |
 
 <p> Cambiar Foco </p>
-|-----------|-----------|
+
+|:----------|:----------|
 | Foco a la izquierda   |   'Mod + arrowleft'   |
 | Foco a la Dercha      |   'Mod +arrowrigth'   |
 | Foco hacia Arriba     |   'Mod + arrowup'     |
