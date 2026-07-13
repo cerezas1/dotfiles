@@ -18,9 +18,10 @@ git@github.com:cerezas1/dotfiles.git
 
 <p> Cambiar Foco </p>
 
+|   Accion  |   Atajo   |
 |:----------|:----------|
 | Foco a la izquierda   |   'Mod + arrowleft'   |
-| Foco a la Dercha      |   'Mod +arrowrigth'   |
+| Foco a la Dercha      |   'Mod + arrowrigth'  |
 | Foco hacia Arriba     |   'Mod + arrowup'     |
 | Foco hacia Abajo      |   'Mod + arrowdown'   |
 |-----------|-----------|
