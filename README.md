@@ -23,7 +23,16 @@ Cambiar Foco
 | Foco hacia Abajo      |   'Mod + arrowdown'   |
 
 Moverse en workspaces
+
 |    Acion  | Atajo    |
 |:----------|:---------|
 |  Desplazarse de 1-9  |  'Mod + 1-9'          |
+|  Mover ventanas 1-9  |  'Mod + SHIFT + 1-9'  |
+
+Subir y Bajar Volumen
+
+|  Accion  |  Atajo    |
+|:----------|:---------|
+|  Subir Volumen       |  'F12'  |
+|  Bajar Volumen       |  'F11'  |
 </details>
