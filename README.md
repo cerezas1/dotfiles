@@ -1,7 +1,4 @@
 # My configuration in ARCH + HYPRLAND 0.55.4
-
-`#ff20ff` HI
-
 git@github.com:cerezas1/dotfiles.git 
 
 ## K E Y B I N D S
@@ -24,4 +21,9 @@ Cambiar Foco
 | Foco a la Dercha      |   'Mod + arrowrigth'  |
 | Foco hacia Arriba     |   'Mod + arrowup'     |
 | Foco hacia Abajo      |   'Mod + arrowdown'   |
+
+Moverse en workspaces
+|    Acion  | Atajo    |
+|:----------|:---------|
+|  Desplazarse de 1-9  |  'Mod + 1-9'          |
 </details>
