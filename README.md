@@ -16,8 +16,6 @@ git@github.com:cerezas1/dotfiles.git
 |   Selected wallpaper  |   'Mod + W'   |
 |   PowerMenu           |   'Mod + Esc' |
 |-----------|-----------|
-<summary>Atajos de teclado focus </summary>
-|   Accion  |   atajo   |
 |:----------|:----------|
 | Foco a la izquierda   |   'Mod + arrowleft'   |
 | Foco a la Dercha      |   'Mod +arrowrigth'   |
