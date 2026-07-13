@@ -5,7 +5,7 @@ git@github.com:cerezas1/dotfiles.git
 
 
 <details>
-<title><b> KEYBINDS </b></title>
+    KEYBINDS
 <summary> Mis atajos de teclado generales</summary>
 
 |   Acion   |   atajo   |
@@ -21,7 +21,7 @@ git@github.com:cerezas1/dotfiles.git
 <details>
 <summary>Atajos de teclado focus </summary>
 |   Accion  |   atajo   |
-|-----------|-----------|
+|:----------|:----------|
 | Foco a la izquierda   |   'Mod + arrowleft |
 | Foco a la Dercha      |   'Mod +arrowrigth |
 | Foco hacia Arriba     |   'Mod + arrowup'  |
