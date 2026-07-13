@@ -5,7 +5,7 @@ git@github.com:cerezas1/dotfiles.git
 
 
 <details>
-## KEYBINDS <br/>
+## KEYBINDS
 <summary> Mis atajos de teclado generales</summary>
 
 |   Acion   |   atajo   |
