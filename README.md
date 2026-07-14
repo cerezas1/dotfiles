@@ -8,7 +8,7 @@
 ![Desktop](screenshots/wallpapers.png)
 
 ### TERMINALES
-![Terminal](screenshots/terminal.png)
+![Terminales](screenshots/terminal.png)
 
 ### NVIM
 ![Nvim](screenshots/nvim.png)
