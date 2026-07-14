@@ -9,6 +9,11 @@
 
 ### TERMINALES
 ![Terminal](screenshots/terminal.png)
+
+### NVIM
+![Nvim](screenshots/nvim.png)
+![NvimSearch](screenshots/explorador.png)
+
 ## K E Y B I N D S
 
 <details>
