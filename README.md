@@ -3,7 +3,8 @@
 ## Clonación de Repositorio
 `git clone https://github.com/cerezas1/dotfiles.git`
 ## Imágenes del escitorio
-
+![Desktop](screenshots/wallpapers.png)
+![Terminal](screenshots/terminal.png)
 ## K E Y B I N D S
 
 <details>
