@@ -1,12 +1,10 @@
 -- lua/core/keymaps.lua
---
 -- vim.keymap.set(modo, tecla, acción, opciones)
 -- modo: "n" normal, "i" insert, "v" visual, "x" visual block, etc.
 -- Con leader = espacio (definido en options.lua), "<leader>w" = "Espacio + w"
 
 local map = vim.keymap.set
 
--- Guardar y salir rápido
 map("n", "<leader>w", "<cmd>w<CR>", { desc = "Guardar archivo" })
 map("n", "<leader>q", "<cmd>q<CR>", { desc = "Cerrar ventana" })
 
@@ -39,3 +37,7 @@ map("n", "<leader>Y", '"+Y', { desc = "Copiar línea al portapapeles del sistema
 -- Navegación entre buffers (archivos abiertos)
 map("n", "<S-h>", "<cmd>bprevious<CR>", { desc = "Buffer anterior" })
 map("n", "<S-l>", "<cmd>bnext<CR>", { desc = "Buffer siguiente" })
+
+map("n", "<leader>m", ":make<CR>", { desc = "Compilar (make)" })
+map("n", "]q", ":cnext<CR>", { desc = "Siguiente error" })
+map("n", "[q", ":cprev<CR>", { desc = "Error anterior" })
