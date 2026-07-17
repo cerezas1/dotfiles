@@ -1,0 +1,17 @@
+[config]
+source_color_index = 0
+
+[templates.waybar]
+input_path = "~/.config/matugen/templates/waybar-colors.css"
+output_path = "~/.config/waybar/colors.css"
+post_hook = "pkill waybar; sleep 0.3; waybar & disown"
+
+[templates.hyprland]
+input_path = "~/.config/matugen/templates/hyprland-colors.conf"
+output_path = "~/.config/hypr/colors.conf"
+post_hook = "hyprctl reload"
+
+# [templates.kitty]
+# input_path = "~/.config/matugen/templates/kitty-colors.conf"
+# output_path = "~/.config/kitty/colors.conf"
+# post_hook = "killall -SIGUSR1 kitty"
