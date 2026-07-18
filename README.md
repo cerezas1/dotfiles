@@ -159,6 +159,4 @@ Antes de clonar, asegúrate de tener:
 
 ## 🙌 Créditos
 
-Hecho con ☕ por [cerezas1](https://github.com/cerezas1). ¡Siéntete libre de forkear y adaptar a tu gusto!
-
-Si te sirvió, considera dejar una ⭐ en el repositorio.
+Hecho con ☕ por [cerezas1](https://github.com/cerezas1).
