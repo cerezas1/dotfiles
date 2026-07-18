@@ -42,9 +42,9 @@
 | Launcher           | Rofi          |
 | Editor             | Neovim        |
 | Gestor de archivos | Dolphin       |
-
-> Actualiza esta tabla con tu terminal, barra (waybar/etc.), y demás herramientas específicas.
-
+| Terminal           | Kitty         |
+| Barra de Estado    | Waybar        |
+| Gestor de inicio   | SDDM          |
 ## 📋 Requisitos previos
 
 Antes de clonar, asegúrate de tener:
