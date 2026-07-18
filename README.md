@@ -6,7 +6,6 @@
 
 ![Arch Linux](https://img.shields.io/badge/Arch%20Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white)
 ![Hyprland](https://img.shields.io/badge/Hyprland-0.55.4-58E1FF?style=for-the-badge&logo=wayland&logoColor=white)
-![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)
 ![Stars](https://img.shields.io/github/stars/cerezas1/dotfiles?style=for-the-badge&color=yellow)
 
 </div>
@@ -69,7 +68,7 @@ Antes de clonar, asegúrate de tener:
 2. **Revisa las dependencias necesarias** (Hyprland, Rofi, Neovim, Dolphin, etc.) e instálalas con `pacman`/`yay`:
 
    ```bash
-   sudo pacman -S hyprland rofi neovim dolphin
+   sudo pacman -S hyprland rofi neovim dolphin kitty zsh fastfetch waybar sddm 
    ```
 
 3. **Haz respaldo de tu configuración actual** antes de sobrescribir nada:
