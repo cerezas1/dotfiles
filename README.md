@@ -45,6 +45,7 @@
 | Terminal           | Kitty         |
 | Barra de Estado    | Waybar        |
 | Gestor de inicio   | SDDM          |
+| Shell              | Zsh           |
 ## 📋 Requisitos previos
 
 Antes de clonar, asegúrate de tener:
