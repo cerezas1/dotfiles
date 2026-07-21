@@ -4,7 +4,7 @@ import "."
 
 AnimatedText {
     id: root
-    color: "#ff6b6b"
+    color: typeof config !== "undefined" ? config.errorColor : "#ff6b6b"
     font.pixelSize: 14
     text: ""
     opacity: 0

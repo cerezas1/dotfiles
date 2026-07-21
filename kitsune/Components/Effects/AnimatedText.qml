@@ -2,7 +2,7 @@ import QtQuick 2.15
 
 Text {
     id: root
-    color: "#ffffff"
+    color: typeof config !== "undefined" ? config.textColor : "#ffffff"
     opacity: 0
 
     NumberAnimation {

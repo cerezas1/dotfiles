@@ -18,7 +18,7 @@ Item {
         id: label
         anchors.horizontalCenter: parent.horizontalCenter
         font.pixelSize: 16
-        color: "#dddddd"
+        color: typeof config !== "undefined" ? config.subTextColor : "#dddddd"
         text: root.frases[root.currentIndex]
     }
 

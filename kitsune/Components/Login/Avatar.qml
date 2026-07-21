@@ -12,8 +12,8 @@ Item {
         id: frame
         anchors.fill: parent
         radius: width / 2
-        color: "#2a2a3e"
-        border.color: "#ffffff"
+        color: typeof config !== "undefined" ? config.boxColor : "#2a2a3e"
+        border.color: typeof config !== "undefined" ? config.textColor : "#ffffff"
         border.width: 2
         clip: true
 

@@ -10,22 +10,32 @@ Rectangle {
     id: root
     width: Screen.width
     height: Screen.height
-    color: "#1a1a2e"
+    color: typeof config !== "undefined" ? config.baseColor : "#1a1a2e"
+    opacity: 0
+
+    readonly property string bgSource: typeof config !== "undefined" ? config.background : "backgrounds/Vampire.jpg"
+    readonly property color overlayColor: typeof config !== "undefined" ? config.overlayColor : "#000000"
+    readonly property real overlayOpacity: typeof config !== "undefined" ? parseFloat(config.overlayOpacity) : 0.35
 
     Image {
         id: background
         anchors.fill: parent
-        source: Qt.resolvedUrl("backgrounds/Vampire.jpg")
+        source: Qt.resolvedUrl(root.bgSource)
         fillMode: Image.PreserveAspectCrop
         asynchronous: true
         visible: status === Image.Ready
+
+        SequentialAnimation on scale {
+            loops: Animation.Infinite
+            NumberAnimation { from: 1.0; to: 1.06; duration: 25000; easing.type: Easing.InOutSine }
+            NumberAnimation { from: 1.06; to: 1.0; duration: 25000; easing.type: Easing.InOutSine }
+        }
     }
 
-    // Capa oscura para mejorar la legibilidad del texto
     Rectangle {
         anchors.fill: parent
-        color: "#000000"
-        opacity: 0.35
+        color: root.overlayColor
+        opacity: root.overlayOpacity
     }
 
     Clock {
@@ -75,10 +85,22 @@ Rectangle {
         }
         function onLoginFailed() {
             errorMessage.show(qsTr("Usuario o contraseña incorrectos"))
+            loginBox.shake()
         }
+    }
+
+    NumberAnimation {
+        id: introFade
+        target: root
+        property: "opacity"
+        from: 0
+        to: 1
+        duration: 700
+        easing.type: Easing.OutQuad
     }
 
     Component.onCompleted: {
         loginBox.userField.forceActiveFocus()
+        introFade.start()
     }
 }

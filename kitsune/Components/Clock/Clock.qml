@@ -18,7 +18,7 @@ Column {
 
     Text {
         anchors.horizontalCenter: parent.horizontalCenter
-        color: "#ffffff"
+        color: typeof config !== "undefined" ? config.textColor : "#ffffff"
         font.pixelSize: 64
         font.weight: Font.Light
         text: Qt.formatTime(dateTime.currentDateTime, "hh:mm")
@@ -26,7 +26,7 @@ Column {
 
     Text {
         anchors.horizontalCenter: parent.horizontalCenter
-        color: "#dddddd"
+        color: typeof config !== "undefined" ? config.subTextColor : "#dddddd"
         font.pixelSize: 18
         text: Qt.formatDate(dateTime.currentDateTime, "dddd, d MMMM yyyy")
     }
