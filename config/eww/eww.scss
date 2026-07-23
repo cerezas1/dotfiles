@@ -1,106 +1,128 @@
-// importante
-* { all: unset; }
-window { background-color: transparent; }
-// COLORS
-$bg-opaque:          #110f18;
-$bg-transparent:     rgba(17, 15, 24, 0.75);
-$bg-selected:        #241f31;
-$text-normal:        #a5a1b8;
-$text-selected:      #cba6f7;
-$accent-line:        #f5c2e7;
-$border-window:      rgba(203, 166, 247, 0.2);
-$border-element:     rgba(203, 166, 247, 0.3);
-$border-art:         rgba(245, 194, 231, 0.15);
-$separator-color:    rgba(245, 194, 231, 0.15);
+// Paleta generada por matugen a partir de tu wallpaper.
+// Este archivo lo regenera matugen cada vez que cambias de fondo
+// (ver colors-template.scss + config de matugen más abajo).
+@import "colors.scss";
+
+// --- Fallbacks por si colors.scss aún no existe (primera vez) ---
+$primary: $primary or #b19cd9;
+$on_primary: $on_primary or #1a1425;
+$primary_container: $primary_container or #4a3f6b;
+$tertiary: $tertiary or #ff9ecf;
+$surface: $surface or #131019;
+$on_surface: $on_surface or #e8e2f0;
+$on_surface_variant: $on_surface_variant or rgba(232, 226, 240, 0.65);
+$outline: $outline or rgba(255, 255, 255, 0.1);
+
+* {
+  font-family: "JetBrainsMono Nerd Font", sans-serif;
+}
+
+// Sin esto, la ventana de GTK detrás del panel queda blanca/opaca y se
+// asoma en las esquinas que el border-radius del .music-box recorta.
+window,
+.background {
+  background-color: transparent;
+}
 
 .music-box {
-  background-color: $bg-transparent;
-  border: 5px solid $border-window;
-  border-radius: 12px;
-  padding: 15px;
+  background-color: rgba($surface, 0.82);
+  border-radius: 28px;
+  border: 1px solid $outline;
+  padding: 26px 28px 20px 28px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 500ms ease;
 }
 
-.top-section {
-  margin-bottom: 5px;
-
-  .album-art {
-    background-color: $bg-opaque;
-    border: 1px solid $border-art;
-    border-radius: 8px;
-    min-width: 80px;
-    min-height: 80px;
-    margin-right: 15px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
-  .music-info {
-    .title {
-      font-size: 14px;
-      font-weight: bold;
-      color: $text-selected;
-    }
-
-    .artist {
-      font-size: 12px;
-      color: $text-normal;
-    }
-  }
+// Glow sutil en el borde mientras suena algo
+.music-box.playing {
+  box-shadow:
+    0 0 0 1px rgba($primary, 0.5),
+    0 0 40px 4px rgba($primary, 0.35),
+    0 20px 50px rgba(0, 0, 0, 0.5);
 }
 
-.separator {
-  background-color: $separator-color;
-  min-height: 1px;
+// ARTISTA: el elemento con más jerarquía del panel
+.artist {
+  color: $on_surface;
+  font-weight: 800;
+  font-size: 30px;
 }
 
-.controls-section {
+// Nombre de la canción: pequeño, subordinado al artista
+.title {
+  color: $on_surface_variant;
+  font-weight: 500;
+  font-size: 14px;
+}
 
-  .buttons {
-    margin-bottom: 12px;
+.gap-lg { min-height: 10px; }
+.gap-md { min-height: 16px; }
+.gap-sm { min-height: 10px; }
 
-    button {
-      font-size: 18px;
-      color: $text-normal;
-      background: none;
-      border: none;
-      padding: 4px 12px;
+.progress-scale trough {
+  min-height: 5px;
+  border-radius: 999px;
+  background-color: rgba($on_surface, 0.12);
+}
 
-      &:hover {
-        color: $text-selected;
-        background-color: $bg-selected;
-        border-radius: 8px;
-      }
-    }
-  }
+.progress-scale highlight {
+  min-height: 5px;
+  border-radius: 999px;
+  background-image: linear-gradient(90deg, $primary, $tertiary);
+}
 
-  .progress-bar-container {
-    .time {
-      font-size: 11px;
-      color: #575268;
-      min-width: 40px;
-    }
+.progress-scale slider {
+  min-width: 11px;
+  min-height: 11px;
+  border-radius: 999px;
+  background-color: $on_surface;
+  box-shadow: 0 0 8px 1px rgba($primary, 0.6);
+}
 
-    scale {
-      margin: 0 10px;
+.time {
+  color: $on_surface_variant;
+  font-size: 10px;
+  margin: 0 8px;
+}
 
-      trough {
-        background-color: $bg-opaque;
-        border-radius: 8px;
-        min-height: 6px;
+// Mini cava: barritas que reaccionan al audio en vivo
+.mini-cava {
+  min-height: 60px;
+}
 
-        highlight {
-          background-color: $accent-line;
-          border-radius: 8px;
-        }
-      }
+.cava-bar {
+  min-width: 5px;
+  margin: 0 3px;
+  border-radius: 3px 3px 0 0;
+  background-image: linear-gradient(0deg, $primary, $tertiary);
+  transition: min-height 60ms linear;
+}
 
-      slider {
-        background-color: $text-selected;
-        border-radius: 5px;
-        min-height: 10px;
-        min-width: 10px;
-      }
-    }
-  }
+.buttons {
+  margin-top: 4px;
+}
+
+.ctrl-btn {
+  color: $on_surface;
+  background-color: rgba($on_surface, 0.1);
+  border: 1px solid rgba($on_surface, 0.14);
+  border-radius: 999px;
+  min-width: 32px;
+  min-height: 32px;
+  margin: 0 5px;
+  transition: all 200ms ease;
+}
+
+.ctrl-btn:hover {
+  background-color: $primary;
+  color: $on_primary;
+  box-shadow: 0 0 12px rgba($primary, 0.6);
+}
+
+.play-btn {
+  min-width: 38px;
+  min-height: 38px;
+  background-image: linear-gradient(135deg, $primary, $tertiary);
+  color: $on_primary;
+  font-weight: bold;
 }

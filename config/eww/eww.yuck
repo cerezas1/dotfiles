@@ -1,81 +1,81 @@
-(defpoll music_title   :interval "1s" "playerctl metadata title 2>/dev/null || echo 'Sin reproducción'")
-(defpoll music_artist  :interval "1s" "playerctl metadata artist 2>/dev/null || echo ''")
-(defpoll music_status  :interval "1s" "playerctl status 2>/dev/null || echo 'Stopped'")
+;; ==== Música / reproducción ====
+(defpoll music_title    :interval "1s" "playerctl metadata title 2>/dev/null || echo 'Sin reproducción'")
+(defpoll music_artist   :interval "1s" "playerctl metadata artist 2>/dev/null || echo ''")
+(defpoll music_status   :interval "1s" "playerctl status 2>/dev/null || echo 'Stopped'")
 (defpoll music_position :interval "1s" "playerctl position --format '{{ duration(position) }}' 2>/dev/null || echo '0:00'")
 (defpoll music_length   :interval "1s" "playerctl metadata --format '{{ duration(mpris:length) }}' 2>/dev/null || echo '0:00'")
 (defpoll music_percent  :interval "1s" :initial "0"
   "awk -v pos=\"$(playerctl position 2>/dev/null || echo 0)\" -v len=\"$(playerctl metadata mpris:length 2>/dev/null || echo 0)\" 'BEGIN { if (len > 0) print int((pos * 100000000) / len); else print 0 }' 2>/dev/null || echo 0")
 
-(defpoll music_art :interval "2s"
-  "bash -c 'url=$(playerctl metadata mpris:artUrl 2>/dev/null); \
-    if [[ $url == file://* ]]; then echo \"\${url#file://}\"; \
-    elif [[ -n $url ]]; then curl -s -o /tmp/eww_art.jpg \"$url\" && echo /tmp/eww_art.jpg; \
-    else echo \"\"; fi'")
+;; ==== Mini cava (streaming, no polling: se actualiza al vuelo) ====
+;; Requiere: cava instalado + el script y config de abajo (cava/config y scripts/cava_eww.sh)
+(deflisten cava_bars :initial "[0,0,0,0,0,0,0,0,0,0]"
+  "~/.config/eww/scripts/cava_eww.sh")
 
 (defwindow music_popup
    :monitor 0
-   :geometry (geometry :x "0%" :y "0%" :width "650px" :height "220px" :anchor "top center")
+   :geometry (geometry :x "0px" :y "40px" :width "380px" :height "340px" :anchor "top center")
    :stacking "fg"
    :windowtype "normal"
    :wm-ignore true
    (reproductor))
 
 (defwidget reproductor []
-  (box :class "music-box"
+  (box :class "music-box ${music_status == "Playing" ? "playing" : "paused"}"
        :orientation "v"
        :space-evenly false
 
-    (box :class "top-section"
+    (label :class "artist"
+           :text "${music_artist}"
+           :halign "start"
+           :limit-width 26)
+
+    (box :class "gap-lg")
+
+    (label :class "title"
+           :text "${music_title}"
+           :halign "start"
+           :limit-width 40)
+
+    (box :class "gap-md")
+
+    (box :class "progress-bar-container"
          :orientation "h"
          :space-evenly false
+      (label :class "time" :text "${music_position}")
+      (scale :class "progress-scale"
+             :min 0
+             :max 100
+             :value "${music_percent}"
+             :hexpand true
+             :onchange "playerctl position $(( {} * $(playerctl metadata mpris:length 2>/dev/null || echo 0) / 100000000 ))")
+      (label :class "time" :text "${music_length}")
+    )
 
-      (box :class "album-art"
-           :style "background-image: url('${music_art}');"
-      )
+    (box :class "gap-md")
 
-      (box :class "music-info"
-           :orientation "v"
-           :space-evenly false
-           :hexpand true
-           :valign "center"
-        (label :class "title"
-               :text "${music_title}"
-               :halign "start"
-               :limit-width 30)
-        (label :class "artist"
-               :text "${music_artist}"
-               :halign "start"
-               :limit-width 30)
+    (box :class "mini-cava"
+         :orientation "h"
+         :halign "center"
+         :space-evenly true
+         :vexpand true
+      (for bar in cava_bars
+        (box :class "cava-bar" :valign "end" :style "min-height: ${bar * 3}px;")
       )
     )
 
-    (box :class "separator")
+    (box :class "gap-sm")
 
-    (box :class "controls-section"
-         :orientation "v"
+    ;; Controles de reproducción — no estaban en tu boceto, los dejé
+    ;; discretos abajo del todo. Si no los quieres, borra este box.
+    (box :class "buttons"
+         :orientation "h"
+         :halign "center"
          :space-evenly false
-
-      (box :class "buttons"
-           :orientation "h"
-           :halign "center"
-           :space-evenly false
-        (button :onclick "playerctl previous" "⏮")
-        (button :onclick "playerctl play-pause"
-                "${music_status == "Playing" ? "⏸" : "▶"}")
-        (button :onclick "playerctl next" "⏭")
-      )
-
-      (box :class "progress-bar-container"
-           :orientation "h"
-           :space-evenly false
-        (label :class "time" :text "${music_position}")
-        (scale :min 0
-               :max 100
-               :value "${music_percent}"
-               :hexpand true
-               :onchange "playerctl position $(( {} * $(playerctl metadata mpris:length 2>/dev/null || echo 0) / 100000000 ))")
-        (label :class "time" :text "${music_length}")
-      )
+      (button :class "ctrl-btn" :onclick "playerctl previous" "⏮")
+      (button :class "ctrl-btn play-btn" :onclick "playerctl play-pause"
+              "${music_status == "Playing" ? "⏸" : "▶"}")
+      (button :class "ctrl-btn" :onclick "playerctl next" "⏭")
     )
   )
 )
