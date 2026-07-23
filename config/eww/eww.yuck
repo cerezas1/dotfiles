@@ -7,14 +7,21 @@
 (defpoll music_percent  :interval "1s" :initial "0"
   "awk -v pos=\"$(playerctl position 2>/dev/null || echo 0)\" -v len=\"$(playerctl metadata mpris:length 2>/dev/null || echo 0)\" 'BEGIN { if (len > 0) print int((pos * 100000000) / len); else print 0 }' 2>/dev/null || echo 0")
 
+(defpoll music_art_color :interval "2s" :initial ""
+  "bash -c 'url=$(playerctl metadata mpris:artUrl 2>/dev/null); img=\"\"; \
+    if [[ $url == file://* ]]; then img=\"\${url#file://}\"; \
+    elif [[ -n $url ]]; then curl -s -o /tmp/eww_art.jpg \"$url\" && img=/tmp/eww_art.jpg; fi; \
+    if [[ -n $img ]]; then \
+      convert \"$img\" -resize 1x1 txt:- 2>/dev/null | grep -oE \"#[0-9A-Fa-f]{6}\" | head -1; \
+    fi'")
+
 ;; ==== Mini cava (streaming, no polling: se actualiza al vuelo) ====
-;; Requiere: cava instalado + el script y config de abajo (cava/config y scripts/cava_eww.sh)
 (deflisten cava_bars :initial "[0,0,0,0,0,0,0,0,0,0]"
   "~/.config/eww/scripts/cava_eww.sh")
 
 (defwindow music_popup
    :monitor 0
-   :geometry (geometry :x "0px" :y "40px" :width "500px" :height "240px" :anchor "top center")
+   :geometry (geometry :x "0px" :y "40px" :width "520px" :height "320px" :anchor "top center")
    :stacking "fg"
    :windowtype "normal"
    :wm-ignore true
@@ -24,6 +31,7 @@
   (box :class "music-box ${music_status == "Playing" ? "playing" : "paused"}"
        :orientation "v"
        :space-evenly false
+       :style "${music_status == "Playing" && music_art_color != "" ? "box-shadow: 0 0 0 1px ${music_art_color}88, 0 0 45px 6px ${music_art_color}55, 0 20px 50px rgba(0,0,0,0.55);" : ""}"
 
     (label :class "artist"
            :text "${music_artist}"
@@ -66,6 +74,8 @@
 
     (box :class "gap-sm")
 
+    ;; Controles de reproducción — no estaban en tu boceto, los dejé
+    ;; discretos abajo del todo. Si no los quieres, borra este box.
     (box :class "buttons"
          :orientation "h"
          :halign "center"
