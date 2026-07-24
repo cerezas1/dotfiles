@@ -23,8 +23,13 @@
 - [🙌 Créditos](#-créditos)
 
 ---
+<div align="center">
 
-[![Watch the demo](./assets/thumbnail.png)](https://youtu.be/UngHtVP-5Ck?si=nKt5l_MkZ_wvdnCP)
+### 🎬 Ver demo en video
+
+[![Watch the demo](https://img.youtube.com/vi/UngHtVP-5Ck/maxresdefault.jpg)](https://youtu.be/UngHtVP-5Ck?si=nKt5l_MkZ_wvdnCP)
+
+</div>
 
 ## ✨ Features
 
