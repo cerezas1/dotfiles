@@ -96,7 +96,7 @@ Antes de clonar, asegúrate de tener:
 ![Terminales](screenshots/terminal.png)
 
 ### Reproductor
-![Music](screenshots/eww_vusualizador.png)
+![Music](screenshots/eww.png)
 
 ### Neovim
 ![Nvim](screenshots/nvim.png)
