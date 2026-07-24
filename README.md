@@ -24,7 +24,7 @@
 
 ---
 
-<video src="https://github.com/cerezas1/dotfiles/blob/main/Assets/desktop.mp4" controls></video>
+[![Watch the demo](./assets/thumbnail.png)](https://youtu.be/UngHtVP-5Ck?si=nKt5l_MkZ_wvdnCP)
 
 ## ✨ Features
 
