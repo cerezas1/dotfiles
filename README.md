@@ -95,6 +95,9 @@ Antes de clonar, asegúrate de tener:
 ### Terminal
 ![Terminales](screenshots/terminal.png)
 
+### Reproductor
+![Music](screenshots/eww_visualizador.png)
+
 ### Neovim
 ![Nvim](screenshots/nvim.png)
 ![NvimSearch](screenshots/explorador.png)
