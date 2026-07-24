@@ -24,6 +24,8 @@
 
 ---
 
+<video src="https://github.com/cerezas1/dotfiles/blob/main/Assets/desktop.mp4" controls></video>
+
 ## ✨ Features
 
 - 🎨 Selector de wallpapers integrado
