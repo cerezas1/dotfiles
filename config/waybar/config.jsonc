@@ -14,7 +14,8 @@
 
     "modules-right": [
 	"cpu",
-        "clock#date",
+  "clock",
+	"custom/calendar",
 	"pulseaudio",
 	"custom/brightness"
     ],
@@ -47,11 +48,6 @@
 	"max-length": 10
     },
 
-    "clock#date": {
-        "interval": 60,
-        "format-alt": "󰥔 {:%a, %d. %b %H:%M}"
-    },
-
     "pulseaudio": {
     "format": "{icon}  {volume}%",
     "format-muted": "  Muted",
@@ -78,5 +74,13 @@
     "return-type": "",
     "on-click": "eww open --toggle music_popup",
     "signal": 5
+	},
+
+"custom/calendar": {
+    "exec": "date '+%d %b'",
+    "interval": 60,
+    "format": " {}",
+    "tooltip": false,
+    "on-click": "eww open --toggle calendar_popup"
 	}
 }

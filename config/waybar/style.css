@@ -15,13 +15,18 @@ window#waybar {
 }
 
 #workspaces,
-#window,
 #cpu,
-#clock {
-    margin: 0 4px;
+#clock,
+#pulseaudio,
+#custom-brightness,
+#custom-calendar,
+#custom-now-playing {
+    color: @primary;
+    background-color: alpha(@background, 0.3);
     padding: 0 12px;
     border-radius: 8px;
-    background: @background;
+    margin: 0 4px;
+    border: 1px solid alpha(@primary, 0.2);
 }
 
 #workspaces button {
@@ -43,43 +48,12 @@ window#waybar {
 }
 
 #workspaces button.urgent {
-    color: #ffffff;
-    background: #e64553;
+    color: @background;
+    background: @accent;
 }
 
-#window {
-    color: @foreground;
-    border: 1px solid @border;
-}
-
-#cpu {
-    color: @primary;
-    border: 1px solid alpha(@primary, 0.2);
-}
-
-#clock {
-    color: @primary;
-    border: 1px solid alpha(@primary, 0.2);
-}
-
-#pulseaudio {
-    color: @primary;
-    background-color: alpha(@background, 0.3);
-    padding: 0 12px;
-    border-radius: 8px;
-    margin: 0 4px;
-    border: 1px solid alpha(@primary, 0.2);
-}
-
-#custom-brightness {
-    color: @primary;
-    background-color: alpha(@background, 0.3);
-    padding: 0 12px;
-    margin: 0 4px;
-    border-radius: 8px;
-    border: 1px solid alpha(@primary, 0.2);
-}
-
-#custom-brightness:hover {
+#custom-brightness:hover,
+#custom-calendar:hover,
+#custom-now-playing:hover {
     background-color: alpha(@primary, 0.2);
 }

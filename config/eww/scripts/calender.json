@@ -1,0 +1,25 @@
+{
+  "nombre_tema": "Matriz Oceánica",
+  "bordes": {
+    "esquina_superior_izquierda": "┌",
+    "esquina_superior_derecha": "┐",
+    "esquina_inferior_izquierda": "└",
+    "esquina_inferior_derecha": "┘",
+    "linea_horizontal": "─",
+    "linea_vertical": "│"
+  },
+  "colores_ansi": {
+    "borde": "\u001b[36m",
+    "nombre_mes": "\u001b[1;35m",
+    "dias_semana": "\u001b[32m",
+    "dias_mes": "\u001b[0m",
+    "fin_de_semana": "\u001b[31m",
+    "hoy": "\u001b[7m",
+    "reset": "\u001b[0m"
+  },
+  "formato": {
+    "ancho_columna": 4,
+    "primer_dia_semana": 1
+  }
+}
+ 
