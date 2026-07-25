@@ -77,12 +77,14 @@ int main(int argc, char *argv[]) {
     printf("(box :class \"calendar\" :orientation \"v\" :space-evenly false\n");
     printf("  (label :class \"calendar-title\" :text \"%s %d\")\n", MONTH_NAMES[month - 1], year);
 
+    /* Encabezado con los nombres de los dias */
     printf("  (box :class \"calendar-row calendar-header\" :orientation \"h\" :space-evenly true\n");
     for (int i = 0; i < 7; i++) {
         printf("    (label :class \"weekday-label\" :text \"%s\")\n", WEEKDAY_LABELS[i]);
     }
     printf("  )\n");
 
+    /* Grid de dias, semana por semana */
     int day  = 1;
     int week = 0;
     while (day <= total_days) {
@@ -93,7 +95,7 @@ int main(int argc, char *argv[]) {
                 printf("    (label :class \"day-empty\" :text \"\")\n");
             } else {
                 int is_today = is_current_month && (day == today->tm_mday);
-                printf("    (button :class \"day-cell%s\" :onclick \"eww update selected_day=%d\" :text \"%d\")\n",
+                printf("    (button :class \"day-cell%s\" :onclick \"eww update selected_day=%d\" \"%d\")\n",
                        is_today ? " today" : "", day, day);
                 day++;
             }
