@@ -16,6 +16,7 @@
 	"cpu",
   "clock",
 	"custom/calendar",
+	"custom/color-picker",
 	"pulseaudio",
 	"custom/brightness"
     ],
@@ -82,5 +83,11 @@
     "format": " {}",
     "tooltip": false,
     "on-click": "eww open --toggle calendar_popup"
+	},
+
+"custom/color-picker": {
+    "format": "󰸌",
+    "tooltip": false,
+    "on-click": "~/.config/eww/scripts/refresh-and-open-colorpicker.sh"
 	}
 }

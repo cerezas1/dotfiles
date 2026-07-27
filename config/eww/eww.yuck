@@ -4,3 +4,4 @@
 
 (include "/home/cereza/.config/eww/widgets/music.yuck")
 (include "/home/cereza/.config/eww/widgets/calendar.yuck")
+(include "/home/cereza/.config/eww/widgets/color-picker.yuck")

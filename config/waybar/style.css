@@ -20,6 +20,7 @@ window#waybar {
 #pulseaudio,
 #custom-brightness,
 #custom-calendar,
+#custom-color-picker,
 #custom-now-playing {
     color: @primary;
     background-color: alpha(@background, 0.3);
@@ -54,6 +55,7 @@ window#waybar {
 
 #custom-brightness:hover,
 #custom-calendar:hover,
+#custom-color-picker:hover,
 #custom-now-playing:hover {
     background-color: alpha(@primary, 0.2);
 }
