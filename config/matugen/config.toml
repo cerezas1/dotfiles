@@ -11,7 +11,17 @@ input_path = "~/.config/matugen/templates/hyprland-colors.conf"
 output_path = "~/.config/hypr/colors.conf"
 post_hook = "hyprctl reload"
 
-# [templates.kitty]
-# input_path = "~/.config/matugen/templates/kitty-colors.conf"
-# output_path = "~/.config/kitty/colors.conf"
-# post_hook = "killall -SIGUSR1 kitty"
+ #[templates.kitty]
+ #input_path = "~/.config/matugen/templates/kitty-colors.conf"
+ #output_path = "~/.config/kitty/colors.conf"
+ #wost_hook = "killall -SIGUSR1 kitty"
+
+[templates.eww]
+input_path = "~/.config/eww/colors-template.scss"
+output_path = "~/.config/eww/colors.scss"
+post_hook = "eww reload"
+
+[templates.cava]
+input_path = "~/.config/matugen/templates/cava-colors.txt"
+output_path = "~/.config/cava/config"
+post_hook = "pkill -SIGUSR1 cava"
