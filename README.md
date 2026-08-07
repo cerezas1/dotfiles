@@ -62,13 +62,19 @@ Es la opción más segura, ya que te permite revisar el script localmente antes 
 # 1. Clona el repositorio
 git clone [https://github.com/cerezas1/dotfiles.git](https://github.com/cerezas1/dotfiles.git)
 cd dotfiles
+```
 
+```bash
 # 2. Asigna permisos de ejecución al script
 chmod +x install.sh
+```
 
+```bash
 # 3. Ejecuta el instalador
 ./install.sh
+```
 
+```bash
 ### Opcion 2: Instalación directa con un solo comando
 ```
 
