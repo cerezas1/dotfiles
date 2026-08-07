@@ -1,13 +1,4 @@
 hl.layer_rule({
-    name = "eww-music-layer",
-    match = { namespace = "gtk-layer-shell" },
-
-    blur = true,
-    ignore_alpha = 1,
-    animation = "slide",
-})
-
-hl.layer_rule({
     name = "swaync-control-center-blur",
     match = { namespace = "swaync-control-center" },
 

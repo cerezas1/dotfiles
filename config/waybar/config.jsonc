@@ -29,7 +29,7 @@
     },
     "group/workspaces-group": {
         "orientation": "inherit",
-        "modules": ["niri/workspaces"]
+        "modules": ["hyprland/workspaces"]
     },
     "group/status-group": {
         "orientation": "inherit",
