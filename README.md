@@ -22,15 +22,6 @@
 - [⌨️ Keybinds](#️-keybinds)
 - [🙌 Créditos](#-créditos)
 
----
-<div align="center">
-
-### 🎬 Ver demo en video
-
-[![Watch the demo](https://img.youtube.com/vi/UngHtVP-5Ck/maxresdefault.jpg)](https://youtu.be/UngHtVP-5Ck?si=nKt5l_MkZ_wvdnCP)
-
-</div>
-
 ## ✨ Features
 
 - 🎨 Selector de wallpapers integrado
@@ -101,9 +92,6 @@ Antes de clonar, asegúrate de tener:
 
 ### Terminal
 ![Terminales](screenshots/terminal.png)
-
-### Reproductor
-![Music](screenshots/eww.png)
 
 ### Neovim
 ![Nvim](screenshots/nvim.png)
