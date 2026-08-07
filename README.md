@@ -54,37 +54,6 @@ Antes de clonar, asegúrate de tener:
 
 ## 🚀 Instalación
 
-> ⚠️ **Aún no hay script de instalación automatizado.** Por ahora la instalación es manual. Revisa cada archivo antes de aplicarlo a tu sistema.
-
-1. **Clona el repositorio**
-
-   ```bash
-   git clone https://github.com/cerezas1/dotfiles.git ~/dotfiles
-   cd ~/dotfiles
-   ```
-
-2. **Revisa las dependencias necesarias** (Hyprland, Rofi, Neovim, Dolphin, etc.) e instálalas con `pacman`/`yay`:
-
-   ```bash
-   sudo pacman -S hyprland rofi neovim dolphin kitty zsh fastfetch waybar sddm 
-   ```
-
-3. **Haz respaldo de tu configuración actual** antes de sobrescribir nada:
-
-   ```bash
-   cp -r ~/.config ~/.config.backup
-   ```
-
-4. **Copia o enlaza las configuraciones** a `~/.config`:
-
-   ```bash
-   cp -r ~/dotfiles/<carpeta-config> ~/.config/
-   ```
-
-5. **Reinicia tu sesión de Hyprland** para aplicar los cambios.
-
-> 💡 Próximamente: un `install.sh` que automatice todo esto con symlinks, backup automático y detección de dependencias.
-
 ## 🖼️ Capturas
 
 ### Selector de Wallpapers
