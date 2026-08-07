@@ -74,11 +74,11 @@ chmod +x install.sh
 ./install.sh
 ```
 
-```bash
 ### Opcion 2: Instalación directa con un solo comando
-```
 
+```bash
 bash -c "$(curl -fsSL [https://raw.githubusercontent.com/cerezas1/dotfiles/main/install.sh](https://raw.githubusercontent.com/cerezas1/dotfiles/main/install.sh))"
+```
 
 ## 🖼️ Capturas
 
