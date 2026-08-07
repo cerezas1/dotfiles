@@ -1,0 +1,12 @@
+require("colors")
+
+require("configs.layout")
+require("configs.monitors")
+require("configs.autostart")
+require("configs.input")
+require("configs.env")
+require("configs.general")
+require("configs.animations")
+require("configs.decoration")
+require("configs.windowrules")
+require("configs.keybindings")

@@ -1,93 +1,122 @@
 {
     "layer": "top",
-    "position": "top",
-    "height": 34,
-    "spacing": 8,
+    "position": "left",
+    "width": 54,
+    "spacing": 0,
+    "margin-top": 4,
+    "margin-bottom": 4,
+    "reload_style_on_change": true,
 
     "modules-left": [
-	    "hyprland/workspaces"
-    ],
-
-    "modules-center": [
-        "custom/now-playing"
+      "group/clock-group",
+      "group/utils-group"
     ],
 
     "modules-right": [
-	"cpu",
-  "clock",
-	"custom/calendar",
-	"custom/color-picker",
-	"pulseaudio",
-	"custom/brightness"
+        "hyprland/workspaces",
+        "group/status-group",
+        "group/sys-group",
+        "group/logo-group"
     ],
-   
-    "hyprland/workspaces": {
-        "disable-scroll": true,
-	"all-outputs": true,
-	"format": "{icon}",
-	"format-icons": {
-		"1": "󰋑 ",
-		"2": "󰋑 ",
-		"3": "󰋑 ",
-		"4": "󰋑 ",
-		"5": "󰋑 ",
-		"urgent": "󰋑 ",
-		"focused": "󰋑 ",
-		"default": "󰋑 "
-	}
+
+    "group/clock-group": {
+        "orientation": "inherit",
+        "modules": ["clock"]
+    },
+    "group/utils-group": {
+        "orientation": "inherit",
+        "modules": ["pulseaudio", "custom/wallpaper-selector", "custom/matugen-selector"]
+    },
+    "group/workspaces-group": {
+        "orientation": "inherit",
+        "modules": ["niri/workspaces"]
+    },
+    "group/status-group": {
+        "orientation": "inherit",
+        "modules": ["network", "backlight"]
+    },
+    "group/sys-group": {
+        "orientation": "inherit",
+        "modules": ["memory", "cpu"]
+    },
+    "group/logo-group": {
+        "orientation": "inherit",
+        "modules": ["custom/distro-logo"]
     },
 
-    "hyprland/window": {
-        "format": "{}",
-        "max-length": 50,
-        "separate-outputs": true
-    }, 
-
-    "cpu": {
-        "interval": 10,
-        "format": " {usage}%",
-	"max-length": 10
+    "clock": {
+        "format": "{0:%H}\n{0:%M}",
+        "tooltip-format": "{:%A, %d de %B de %Y}"
     },
 
     "pulseaudio": {
-    "format": "{icon}  {volume}%",
-    "format-muted": "  Muted",
-    "format-icons": {
-        "default": ["󰕿", "󰖀", "󰕾"]
+        "format": "{volume}%",
+        "format-muted": "⚊",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+",
+        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
     },
-    "scroll-step": 5, 
-    "on-click": "pavucontrol" 
-	},
 
-"custom/brightness": {
-    "format": "󰃠 {}%",
-    "exec": "brightnessctl -m | cut -d',' -f4 | tr -d '%'",
-    "interval": 2,
-    "on-click": "hyprctl dispatch exec '[float; size 400 200; move cursor -50% -50%]' ~/.config/hypr/scripts/brightness_menu.sh",
-    "on-click-right": "~/.config/hypr/scripts/toggle_gammastep.sh",
-    "tooltip": false
-	},
+    "custom/wallpaper-selector": {
+        "format": "䷊",
+        "on-click": "~/.config/rofi/menus/wallpaperselect.sh",
+        "tooltip": false
+    },
 
-"custom/now-playing": {
-    "exec": "~/.config/waybar/scripts/now-playing.sh",
-    "interval": 1,
-    "format": "{}",
-    "return-type": "",
-    "on-click": "eww open --toggle music_popup",
-    "signal": 5
-	},
+    "custom/matugen-selector": {
+        "format": "䷢",
+        "on-click": "~/.config/rofi/scripts/color-picker-rofi.sh",
+        "tooltip": false
+    },
 
-"custom/calendar": {
-    "exec": "date '+%d %b'",
-    "interval": 60,
-    "format": " {}",
-    "tooltip": false,
-    "on-click": "eww open --toggle calendar_popup"
-	},
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "format": "{icon}",
+        "format-icons":{
+        "1": "Π",
+        "2": "Ψ",
+        "3": "Ρ",
+        "4": "Σ",
+        "5": "Τ",
+        "6": "Θ",
+        "7": "Υ",
+        "8": "Ξ",
+        "9": "Ζ"
+        },
+        "persistent-workspaces": {
+          "*": 2
+        }
+    },
 
-"custom/color-picker": {
-    "format": "󰸌",
-    "tooltip": false,
-    "on-click": "~/.config/eww/scripts/refresh-and-open-colorpicker.sh"
-	}
+    "network": {
+        "format-wifi": " ♜ ",
+        "format-ethernet": "♞ ",
+        "format-disconnected": "♟ ",
+        "tooltip-format": "{essid} ({signalStrength}%)"
+    },
+
+    "backlight": {
+        "format": "{icon} {percent}",
+        "format-icons": ["☶", "☳", "☵"],
+        "on-scroll-up": "brightnessctl s +5%",
+        "on-scroll-down": "brightnessctl s 5%-",
+        "tooltip": true,
+        "tooltip-format": "Brillo: {percent}%"
+    },
+
+    "memory": {
+        "format": "♚ {}%",
+        "interval": 2,
+        "tooltip-format": "RAM: {used:0.1f}GB / {total:0.1f}GB"
+    },
+
+    "cpu": {
+        "format": "♛ {usage}%",
+        "interval": 2
+    },
+
+    "custom/distro-logo": {
+        "format": "",
+        "tooltip": false
+    }
 }

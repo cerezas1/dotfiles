@@ -60,4 +60,5 @@ awww img "$SELECTED_WALL" \
     --transition-angle 30 \
     --transition-duration 1.2 \
     --transition-fps 60 \
-    --resize crop
+    --resize crop \
+    --filter Lanczos3

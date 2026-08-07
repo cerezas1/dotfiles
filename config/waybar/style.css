@@ -1,61 +1,137 @@
-@import url("colors.css");
+@import "colors.css";
 
 * {
+    font-family: "FiraCode Nerd Font", "Symbols Nerd Font";
+    font-size: 15px;
+    min-width: 0px;
+    min-height: 0px;
     border: none;
-    border-radius: 10px;
-    font-family: "FiraCode Nerd Font";
-    font-size: 12px;
-    min-height: 0;
-    transition: background-color 0.25s ease, color 0.25s ease;
+    border-radius: 25px;
+    box-shadow: none;
+    text-shadow: none;
+    padding: 0px;
 }
 
 window#waybar {
-    background: transparent;
+    transition-property: background-color;
+    transition-duration: 0.5s;
+    border-radius: 10px;
+    border: 2px solid mix(@accent, @background, 0.45);
+    background: alpha(@background, 0.7);
+    color: mix(@accent, @foreground, 0.55);
+}
+
+.modules-left {
+    transition-property: background-color;
+    transition-duration: 0.5s;
+    margin: 4px;
+    border-radius: 10px;
+    background: alpha(@background, 0.4);
+    color: @foreground;
+}
+.modules-right {
+    transition-property: background-color;
+    transition-duration: 0.5s;
+    margin: 4px;
+    border-radius: 10px;
+    background: alpha(@background, 0.4);
     color: @foreground;
 }
 
-#workspaces,
-#cpu,
+#clock-group,
+#utils-group,
+#status-group,
+#sys-group,
+#logo-group {
+    border-radius: 5px;
+    margin: 2px 3px;
+    background: alpha(mix(@accent, @background, 0.75), 0.35);
+}
+
+#clock-group   { margin-top: 10px; }
+#utils-group   { margin-top: 6px; }
+#workspaces-group { margin-top: 18px; }
+#status-group  { margin-top: 22px; }
+#sys-group     { margin-top: 14px; }
+#logo-group    { margin-top: 6px; }
+
 #clock,
 #pulseaudio,
-#custom-brightness,
-#custom-calendar,
-#custom-color-picker,
-#custom-now-playing {
-    color: @primary;
-    background-color: alpha(@background, 0.3);
-    padding: 0 12px;
-    border-radius: 8px;
-    margin: 0 4px;
-    border: 1px solid alpha(@primary, 0.2);
+#custom-wallpaper-selector,
+#custom-matugen-selector,
+#workspaces,
+#network,
+#backlight,
+#memory,
+#cpu,
+#custom-distro-logo {
+    color: alpha(@foreground, 0.85);
+    min-width: 40px;
+}
+
+#clock {
+    font-family: "Dancing Script", "FiraCode Nerd Font";
+    font-size: 16px;
+    font-weight: 600;
+    padding: 6px 0;
+    color: mix(@accent, @foreground, 0.5);
+}
+
+#pulseaudio {
+    font-size: 11px;
+    padding: 4px 0;
+}
+
+#custom-wallpaper-selector {
+    font-size: 14px;
+    padding: 4px 0;
+}
+
+#custom-matugen-selector {
+    font-size: 14px;
+    padding: 4px 0;
+}
+
+#workspaces {
+    padding: 4px 0;
 }
 
 #workspaces button {
-    color: @primary;
-    padding: 0 8px;
-    margin: 4px;
-    border-radius: 10px;
-    background: transparent;
+    min-height: 32px;
+    min-width: 40px;
+    padding: 4px 0;
+    font-size: 12px;
+    color: alpha(@foreground, 0.35);
+    border-radius: 4px;
 }
 
 #workspaces button.active {
-    color: @background;
-    background: @primary;
+    background: alpha(mix(@accent, @background, 0.55), 0.5);
+    color: mix(@accent, @foreground, 0.55); 
 }
 
-#workspaces button:hover {
-    background: alpha(@primary, 0.18);
-    color: @primary;
+#network {
+    font-size: 13px;
+    padding: 4px 0;
 }
 
-#workspaces button.urgent {
-    color: @background;
-    background: @accent;
+#backlight {
+    font-size: 10px;
+    padding: 4px 0;
 }
 
-#custom-brightness:hover,
-#custom-calendar:hover,
-#custom-color-picker:hover,
-#custom-now-playing:hover {
-    background-color: alpha(@primary, 0.2);
+#memory {
+    font-size: 10px;
+    padding: 4px 0;
+}
+
+#cpu {
+    font-size: 10px;
+    padding: 4px 0;
+}
+
+#custom-distro-logo {
+    font-size: 14px;
+    padding: 4px 0;
+    color: mix(@primary, @foreground, 0.5);
 }

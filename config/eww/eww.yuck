@@ -1,7 +1,0 @@
-;; ==== Punto de entrada ====
-;; Cada widget vive en su propio archivo dentro de widgets/.
-;; Cuando agregues el calendario u otros paneles, se importan igual.
-
-(include "/home/cereza/.config/eww/widgets/music.yuck")
-(include "/home/cereza/.config/eww/widgets/calendar.yuck")
-(include "/home/cereza/.config/eww/widgets/color-picker.yuck")

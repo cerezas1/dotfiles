@@ -1,5 +1,4 @@
 #!/bin/bash
-# ~/.config/hypr/scripts/toggle_gammastep.sh
 
 STATUS_FILE="/tmp/warm_filter_active"
 SHADER_PATH="$HOME/.config/hypr/shaders/warm-filter.glsl"

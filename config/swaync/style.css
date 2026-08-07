@@ -1,0 +1,261 @@
+@import "./themes/colors.css";
+
+* {
+    font-family:"FiraCode Nerd Font", "Dancing Script",  sans-serif;
+  font-size: 14px;
+  transition: 200ms ease;
+}
+
+.notification-row {
+  outline: none;
+  margin: 6px 10px;
+}
+
+.notification {
+  background: alpha(@background, 0.55);
+  border: 1px solid @border;
+  border-radius: 14px;
+  padding: 4px;
+  box-shadow: 0 4px 14px alpha(@background, 0.35);
+}
+
+.notification-content {
+  background: transparent;
+  padding: 8px;
+}
+
+.notification-default-action,
+.notification-action {
+  background: transparent;
+  color: @foreground;
+  border-radius: 10px;
+}
+
+.notification-default-action:hover,
+.notification-action:hover {
+  background: alpha(@primary, 0.18);
+}
+
+.close-button {
+  background: @border;
+  color: @background;
+  border-radius: 99px;
+  min-width: 22px;
+  min-height: 22px;
+  padding: 0;
+  margin: 6px;
+}
+
+.close-button:hover {
+  background: @accent;
+}
+
+.notification-icon {
+  border-radius: 10px;
+}
+
+.summary {
+  color: @foreground;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.time {
+  color: alpha(@foreground, 0.55);
+  font-size: 11px;
+}
+
+.body {
+  color: alpha(@foreground, 0.85);
+  font-size: 13px;
+}
+
+.image {
+  border-radius: 10px;
+}
+
+.progress-bar {
+  background: alpha(@foreground, 0.12);
+  border-radius: 99px;
+}
+
+.progress-bar-instant {
+  background: @primary;
+  border-radius: 99px;
+}
+
+.notification.low {
+  border-left: 4px solid @accent;
+}
+
+.notification.normal {
+  border-left: 4px solid @primary;
+}
+
+.notification.critical {
+  border-left: 4px solid #e06c75;
+}
+
+.control-center {
+  background: alpha(@background, 0.55);
+  border: 1px solid @border;
+  border-radius: 16px;
+  color: @foreground;
+  padding: 10px;
+}
+
+.control-center-list {
+  background: transparent;
+}
+
+.control-center-list-placeholder {
+  color: alpha(@foreground, 0.4);
+}
+
+.floating-notifications {
+  background: transparent;
+}
+
+.blank-window {
+  background: transparent;
+}
+
+.widget-title {
+  color: @foreground;
+  padding: 6px 4px 10px 4px;
+}
+
+.widget-title > label {
+  font-size: 18px;
+  font-weight: bold;
+  color: @primary;
+}
+
+.widget-title > button {
+  background: alpha(@primary, 0.12);
+  color: @primary;
+  border-radius: 10px;
+  padding: 4px 10px;
+}
+
+.widget-title > button:hover {
+  background: alpha(@primary, 0.25);
+}
+
+.widget-dnd {
+  padding: 6px 4px;
+  color: @foreground;
+}
+
+.widget-dnd > switch {
+  background: alpha(@foreground, 0.12);
+  border-radius: 99px;
+  min-height: 22px;
+  min-width: 42px;
+}
+
+.widget-dnd > switch slider {
+  background: @foreground;
+  border-radius: 99px;
+}
+
+.widget-dnd > switch:checked {
+  background: @primary;
+}
+
+.widget-dnd > switch:checked slider {
+  background: @background;
+}
+
+.widget-mpris {
+  background: alpha(@foreground, 0.05);
+  border: 1px solid @border;
+  border-radius: 14px;
+  padding: 8px;
+  margin: 6px 0;
+}
+
+.widget-mpris-player {
+  padding: 4px;
+}
+
+.widget-mpris-title {
+  color: @foreground;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.widget-mpris-subtitle {
+  color: alpha(@foreground, 0.6);
+  font-size: 12px;
+}
+
+.widget-mpris > box > button,
+.widget-mpris-player > button {
+  background: alpha(@primary, 0.15);
+  color: @primary;
+  border-radius: 99px;
+}
+
+.widget-mpris > box > button:hover,
+.widget-mpris-player > button:hover {
+  background: alpha(@primary, 0.3);
+}
+
+.widget-volume {
+  color: @foreground;
+  padding: 6px 4px;
+}
+
+.widget-volume > box > slider,
+.widget-volume slider {
+  background: @primary;
+}
+
+.widget-volume trough {
+  background: alpha(@foreground, 0.12);
+  border-radius: 99px;
+  min-height: 8px;
+}
+
+.widget-buttons-grid {
+  padding: 6px;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button {
+  background: alpha(@foreground, 0.06);
+  color: @foreground;
+  border: 1px solid @border;
+  border-radius: 12px;
+  padding: 10px;
+  margin: 3px;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+  background: alpha(@primary, 0.18);
+  border-color: @primary;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked {
+  background: @primary;
+  color: @background;
+}
+
+.widget-label {
+  color: alpha(@foreground, 0.7);
+  font-size: 12px;
+  padding: 4px;
+}
+
+scrollbar {
+  background: transparent;
+}
+
+scrollbar slider {
+  background: @border;
+  border-radius: 99px;
+}
+
+scrollbar slider:hover {
+  background: alpha(@accent, 0.50);
+}

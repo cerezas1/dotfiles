@@ -1,0 +1,8 @@
+-- Programas al Iniciar
+hl.on("hyprland.start", function()
+    -- hl.exec_cmd("kitty")
+    hl.exec_cmd("waybar")
+    hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+    hl.exec_cmd("awww-daemon")
+    hl.exec_cmd("swaync")
+end)
