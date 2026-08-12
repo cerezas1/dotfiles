@@ -18,6 +18,8 @@
 - `ripgrep` (`rg`) — lo usa Telescope para `live_grep`
 - Un compilador de C (`gcc`/`clang`) — lo necesita treesitter para compilar los parsers
 - Una Nerd Font instalada 
+
+   ```bash
 ## Estructura
 nvim/
 ├── init.lua                  -- solo hace 3 "require", el punto de entrada
@@ -37,6 +39,7 @@ nvim/
 │       ├── which-key.lua     -- popup que recuerda tus atajos
 │       └── oil.lua           -- explorador de archivos minimalista
 
+```
 Cada archivo dentro de `lua/plugins/` es un plugin independiente. Para
 agregar uno nuevo en el futuro: creas un archivo `lua/plugins/lo-que-sea.lua`
 que devuelva una tabla `{ "usuario/repo", opts = {...} }` y listo, lazy.nvim
