@@ -432,19 +432,3 @@ The repository includes `lazy-lock.json`, which records the exact commit current
 When changing plugins, keep the lockfile committed so that the configuration can be reproduced consistently across machines.
 
 ---
-
-## 📌 Notes
-
-This is a personal configuration and is primarily designed around my own workflow.
-
-Feel free to use it as a starting point, but expect to adjust:
-
-* keymaps
-* language servers
-* editor options
-* theme colors
-* plugins
-* system dependencies
-
-The goal is to keep the configuration small, understandable and easy to modify rather than turning it into a framework of its own.
-
