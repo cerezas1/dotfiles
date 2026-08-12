@@ -99,11 +99,11 @@ bash -c "$(curl -fsSL [https://raw.githubusercontent.com/cerezas1/dotfiles/main/
 
 | Acción            | Atajo          |
 |:-------------------|:---------------|
-| Abrir Terminal      | `Mod + Q`      |
-| Cerrar Ventana       | `Mod + C`      |
-| Rofi Menu            | `Mod + R`      |
+| Abrir Terminal      | `Mod + W`      |
+| Cerrar Ventana       | `Mod + Q`      |
+| Rofi Menu            | `Mod + ESPACE`      |
 | PowerMenu            | `Mod + Esc`    |
-| Dolphin              | `Mod + E`      |
+| Dolphin              | `Mod + D`      |
 
 </details>
 
@@ -144,7 +144,7 @@ bash -c "$(curl -fsSL [https://raw.githubusercontent.com/cerezas1/dotfiles/main/
 
 | Acción                  | Atajo       |
 |:--------------------------|:------------|
-| Seleccionar wallpaper       | `Mod + W`   |
+| Seleccionar wallpaper       | `Mod + A`   |
 | Siguiente wallpaper         | `Mod + B`   |
 | Wallpaper anterior          | `Mod + N`   |
 
