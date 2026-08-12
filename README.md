@@ -83,14 +83,16 @@ bash -c "$(curl -fsSL [https://raw.githubusercontent.com/cerezas1/dotfiles/main/
 ## 🖼️ Capturas
 
 ### Selector de Wallpapers
-![Desktop](screenshots/wallpapers.png)
+![Wallpaper](screenshots/wallpapers.png)
 
 ### Terminal
 ![Terminales](screenshots/terminal.png)
 
+### Desktop
+![Desktop](screenshots/desktop.png)
+
 ### Neovim
 ![Nvim](screenshots/nvim.png)
-![NvimSearch](screenshots/explorador.png)
 
 ## ⌨️ Keybinds
 
@@ -103,7 +105,7 @@ bash -c "$(curl -fsSL [https://raw.githubusercontent.com/cerezas1/dotfiles/main/
 | Cerrar Ventana       | `Mod + Q`      |
 | Rofi Menu            | `Mod + ESPACE`      |
 | PowerMenu            | `Mod + Esc`    |
-| Dolphin              | `Mod + D`      |
+| Dolphin              | `Mod + E`      |
 
 </details>
 
