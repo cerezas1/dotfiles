@@ -1,13 +1,5 @@
 -- lua/core/lazy.lua
 --
--- Este archivo hace DOS cosas:
---   1. Si "lazy.nvim" (el gestor de plugins) no está instalado en el
---      disco, lo clona automáticamente desde GitHub. Así, si algún día
---      reinstalas tu sistema, con clonar este repo y abrir nvim ya se
---      instala todo solo. Es el mismo truco que usan LazyVim, etc,
---      pero aquí lo controlas tú.
---   2. Le dice a lazy.nvim: "carga como plugins todo lo que encuentres
---      dentro de lua/plugins/". Cada archivo ahí adentro es UN plugin.
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 

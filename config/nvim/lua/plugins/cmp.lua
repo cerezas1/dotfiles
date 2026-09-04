@@ -1,8 +1,4 @@
 -- lua/plugins/cmp.lua
---
--- nvim-cmp es el motor de autocompletado (el popup que aparece
--- mientras escribes). Por sí solo no sabe de dónde sacar sugerencias;
--- cada "source" (LSP, snippets, palabras del buffer) se agrega aparte.
 
 return {
   "hrsh7th/nvim-cmp",
@@ -24,8 +20,6 @@ return {
           luasnip.lsp_expand(args.body)
         end,
       },
-      -- Ventana minimalista, sin bordes recargados, que hereda los
-      -- colores del colorscheme activo
       window = {
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),

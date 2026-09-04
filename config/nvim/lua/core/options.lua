@@ -1,8 +1,5 @@
 -- lua/core/options.lua
 --
--- "vim.opt" es la forma moderna (Lua) de escribir lo que antes en
--- vimscript era ":set numero". Cada línea de acá reemplaza una línea
--- de un .vimrc clásico.
 
 local opt = vim.opt
 

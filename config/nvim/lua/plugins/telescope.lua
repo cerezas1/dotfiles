@@ -2,8 +2,6 @@
 --
 -- Telescope es el "Ctrl+P" / buscador difuso de Neovim: archivos,
 -- texto dentro de archivos, buffers abiertos, historial de git, etc.
--- Todo se ve en un popup centrado, minimalista, que ya combina con
--- el colorscheme gracias a la integración que prendimos arriba.
 
 return {
   "nvim-telescope/telescope.nvim",

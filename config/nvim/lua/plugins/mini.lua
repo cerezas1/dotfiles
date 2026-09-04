@@ -2,18 +2,12 @@
 --
 -- mini.nvim es una colección de módulos chiquitos e independientes,
 -- cada uno resuelve UNA cosa sin florituras. Va perfecto con lo que
--- pediste: funcional, pero nada "llamativo" ni pesado. Usamos 3 módulos:
---   mini.statusline -> barra de estado inferior, minimalista
---   mini.pairs      -> cierra automáticamente ( [ { " ' etc
---   mini.indentscope -> una línea vertical sutil que marca el bloque de indentación actual
 
 return {
   "echasnovski/mini.nvim",
   version = false, -- usar la versión más reciente del repo, no un release fijo
   config = function()
     -- Barra de estado: minimalista, sin "secciones" recargadas de íconos.
-    -- Ya hereda los colores de catppuccin porque prendimos esa
-    -- integración (integrations.mini) en plugins/colorscheme.lua
     require("mini.statusline").setup({
       use_icons = true,
     })
