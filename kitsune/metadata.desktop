@@ -1,13 +1,14 @@
 [SddmGreeterTheme]
 Name=Kitsune
-Description=Tema personalizado para SDDM
-Author=Cerezas1
-Copyright=2026, Cerezas1
+Description=Tema de login con wallpaper a pantalla completa, panel con blur, avatar y frases animadas
+Author=Usuario
+Copyright=(c) 2026
 License=MIT
 Type=sddm-theme
 Version=1.0
 Website=
+Screenshot=screenshot.png
 MainScript=Main.qml
-ConfigFile=Themes/theme.conf
+QtVersion=6
+ConfigFile=theme.conf
 TranslationsDirectory=translations
-FontsDirectory=Assets/Fonts

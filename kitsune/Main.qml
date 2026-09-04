@@ -1,106 +1,108 @@
-import QtQuick 2.15
-import QtQuick.Window 2.15
-
-import "Components/Clock"
-import "Components/Login"
-import "Components/Buttons"
-import "Components/Effects"
+import QtQuick 6.0
+import QtQuick.Window 6.0
+import QtQuick.Effects 6.5
+import "components/avatar"
+import "components/Login"
+import "components/Effects"
 
 Rectangle {
     id: root
-    width: Screen.width
-    height: Screen.height
-    color: typeof config !== "undefined" ? config.baseColor : "#1a1a2e"
-    opacity: 0
+    width: 1920
+    height: 1080
+    color: "#000000"
+    focus: true
 
-    readonly property string bgSource: typeof config !== "undefined" ? config.background : "backgrounds/Vampire.jpg"
-    readonly property color overlayColor: typeof config !== "undefined" ? config.overlayColor : "#000000"
-    readonly property real overlayOpacity: typeof config !== "undefined" ? parseFloat(config.overlayOpacity) : 0.35
-
+    readonly property real panelRatio: 0.30
+       // ---- Wallpaper a pantalla completa (100%) ----
     Image {
-        id: background
+        id: wallpaper
         anchors.fill: parent
-        source: Qt.resolvedUrl(root.bgSource)
+        source: "wallpaper/current_wallpaper"
         fillMode: Image.PreserveAspectCrop
         asynchronous: true
-        visible: status === Image.Ready
+        sourceSize.width: 1920
+        sourceSize.height: 1080
+        onStatusChanged: if (status === Image.Ready) panelBackdrop.scheduleUpdate()
 
-        SequentialAnimation on scale {
-            loops: Animation.Infinite
-            NumberAnimation { from: 1.0; to: 1.06; duration: 25000; easing.type: Easing.InOutSine }
-            NumberAnimation { from: 1.06; to: 1.0; duration: 25000; easing.type: Easing.InOutSine }
+        Rectangle {
+            anchors.fill: parent
+            color: "#111111"
+            visible: wallpaper.status !== Image.Ready
         }
     }
 
-    Rectangle {
-        anchors.fill: parent
-        color: root.overlayColor
-        opacity: root.overlayOpacity
-    }
-
-    Clock {
-        id: clock
-        anchors.top: parent.top
-        anchors.topMargin: 60
-        anchors.horizontalCenter: parent.horizontalCenter
-    }
-
-    FraseAnimada {
-        id: frase
-        anchors.top: clock.bottom
-        anchors.topMargin: 20
-        anchors.horizontalCenter: parent.horizontalCenter
-    }
-
-    LoginBox {
-        id: loginBox
-        anchors.centerIn: parent
-    }
-
-    ErrorMassage {
-        id: errorMessage
-        anchors.top: loginBox.bottom
-        anchors.topMargin: 16
-        anchors.horizontalCenter: parent.horizontalCenter
-    }
-
-    NetworkIndicator {
-        id: networkIndicator
-        anchors.top: parent.top
+    // ---- Panel de login: 30% derecho, con blur sobre el wallpaper ----
+    Item {
+        id: panel
         anchors.right: parent.right
-        anchors.margins: 20
-    }
-
-    PowerButtons {
-        id: powerButtons
+        anchors.top: parent.top
         anchors.bottom: parent.bottom
-        anchors.right: parent.right
-        anchors.margins: 30
+        width: parent.width * root.panelRatio
+
+        // Textura en vivo del wallpaper recortada a la zona del panel
+        ShaderEffectSource {
+            id: panelBackdrop
+            sourceItem: wallpaper
+            live: false
+            hideSource: false
+            sourceRect: Qt.rect(panel.x, panel.y, panel.width, panel.height)
+            visible: false
+        }
+
+        // Wallpaper recortado + difuminado (blur) detrás del panel
+        MultiEffect {
+            anchors.fill: parent
+            source: panelBackdrop
+            blurEnabled: true
+            blur: 1.0
+            blurMax: 24
+            autoPaddingEnabled: false
+        }
+
+        // Velo semitransparente para dar contraste al texto sobre el blur
+        Rectangle {
+            anchors.fill: parent
+            color: "#00000070"
+        }
+
+        Column {
+            anchors.centerIn: parent
+            spacing: 24
+
+            Avatar {
+                id: avatar
+                anchors.horizontalCenter: parent.horizontalCenter
+                username: (typeof userModel !== "undefined" && userModel.lastUser) ? userModel.lastUser : ""
+            }
+
+            LoginPanel {
+                id: loginPanel
+                anchors.horizontalCenter: parent.horizontalCenter
+                username: avatar.username
+                onLoginRequested: function (password) {
+                    if (typeof sddm !== "undefined") {
+                        sddm.login(avatar.username, password,
+                                   (typeof sessionModel !== "undefined" ? sessionModel.lastIndex : 0))
+                    }
+                }
+            }
+        }
+
+        // ---- "Frases animadas" en la parte inferior del panel ----
+        AnimatedPhrases {
+            id: phrases
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: 40
+            anchors.horizontalCenter: parent.horizontalCenter
+            width: parent.width * 0.8
+        }
     }
 
+    // Limpia la contraseña si el login falla
     Connections {
         target: typeof sddm !== "undefined" ? sddm : null
-        function onLoginSucceeded() {
-            errorMessage.hide()
-        }
         function onLoginFailed() {
-            errorMessage.show(qsTr("Usuario o contraseña incorrectos"))
-            loginBox.shake()
+            loginPanel.password = ""
         }
-    }
-
-    NumberAnimation {
-        id: introFade
-        target: root
-        property: "opacity"
-        from: 0
-        to: 1
-        duration: 700
-        easing.type: Easing.OutQuad
-    }
-
-    Component.onCompleted: {
-        loginBox.userField.forceActiveFocus()
-        introFade.start()
     }
 }

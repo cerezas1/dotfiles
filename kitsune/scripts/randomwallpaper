@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+THEME_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+WALLPAPER_DIR="$THEME_DIR/wallpaper"
+CURRENT_LINK="$WALLPAPER_DIR/current_wallpaper"
+
+shopt -s nullglob nocaseglob
+wallpapers=("$WALLPAPER_DIR"/*.jpg "$WALLPAPER_DIR"/*.jpeg "$WALLPAPER_DIR"/*.png "$WALLPAPER_DIR"/*.webp)
+shopt -u nullglob nocaseglob
+
+if [ "${#wallpapers[@]}" -eq 0 ]; then
+    echo "[randomwallpaper] No se encontraron imagenes en $WALLPAPER_DIR" >&2
+    exit 1
+fi
+
+random_index=$(( RANDOM % ${#wallpapers[@]} ))
+chosen="${wallpapers[$random_index]}"
+chosen_name="$(basename "$chosen")"
+
+ln -sf "$chosen_name" "$CURRENT_LINK"
+
+echo "[randomwallpaper] Wallpaper seleccionado: $chosen_name -> current_wallpaper"
