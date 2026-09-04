@@ -6,7 +6,7 @@ LOGFILE="$HOME/.cache/wallpaperselect.log"
 exec >> "$LOGFILE" 2>&1
 echo "=== $(date) ==="
 
-WALL_DIR="$HOME/wallpaper"
+WALL_DIR="$HOME/wallpapers/"
 CACHE_DIR="$HOME/.cache/awww_rofi_thumbs"
 ROFI_THEME="$HOME/.config/rofi/themes/Miku.rasi"
 
@@ -68,4 +68,8 @@ awww img "$FULL_PATH" \
 echo "--- resultado awww: $? ---"
 matugen image "$FULL_PATH" --source-color-index 0
 echo "--- resultado matugen: $? ---"
+
+"$HOME/.config/rofi/scripts/rofi-wallpaper-sync.sh" "$FULL_PATH"
+echo "--- resultado rofi-wallpaper-sync: $? ---"
+
 notify-send "C A M B I O" "El fondo cambió a: $CHOICE"

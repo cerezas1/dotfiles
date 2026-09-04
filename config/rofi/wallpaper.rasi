@@ -1,0 +1,3 @@
+* {
+    wallpaper-image:              url("/home/arch/wallpapers//war.png", height);
+}

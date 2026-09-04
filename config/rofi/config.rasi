@@ -1,4 +1,4 @@
-@import "~/.config/rofi/themes/DarkMiku.rasi"
+@import "~/.config/rofi/themes/style.rasi"
 
 configuration  {
   font:		"FiraCode Nerd Font 12";
