@@ -52,33 +52,9 @@ Antes de clonar, asegúrate de tener:
 - Drivers de GPU correctamente configurados
 - Conexión a internet activa
 
-## 🚀 Instalación
-> **⚠️ Advertencia:** Se recomienda revisar el contenido de cualquier script de instalación antes de ejecutarlo en tu sistema. Asegúrate de respaldar tus configuraciones actuales antes de continuar.
+##Instalación
 
-### Opción 1: Clonar y ejecutar (Recomendado)
-Es la opción más segura, ya que te permite revisar el script localmente antes de darle permisos de ejecución:
-
-```bash
-# 1. Clona el repositorio
-git clone [https://github.com/cerezas1/dotfiles.git](https://github.com/cerezas1/dotfiles.git)
-cd dotfiles
-```
-
-```bash
-# 2. Asigna permisos de ejecución al script
-chmod +x install.sh
-```
-
-```bash
-# 3. Ejecuta el instalador
-./install.sh
-```
-
-### Opcion 2: Instalación directa con un solo comando
-
-```bash
-bash -c "$(curl -fsSL [https://raw.githubusercontent.com/cerezas1/dotfiles/main/install.sh](https://raw.githubusercontent.com/cerezas1/dotfiles/main/install.sh))"
-```
+En mejora del script que se encargara de aplicar todo
 
 ## 🖼️ Capturas
 
