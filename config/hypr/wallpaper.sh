@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Directorio de tus fondos de pantalla
-WALLPAPER_DIR="$HOME/wallpaper"
+WALLPAPER_DIR="$HOME/wallpapers"
 
 # Validar que el directorio exista
 if [ ! -d "$WALLPAPER_DIR" ]; then

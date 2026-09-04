@@ -1,5 +1,6 @@
 -- Reglas de ventana
 hl.window_rule({name = "firefox-custom", match = { class = "^(firefox)$" }, opaque = true, no_blur = true,})
+hl.window_rule({name = "Dolphin", match = { class = "^(org.kde.dolphin)$" }, opaque = true, no_blur = false,})
 hl.window_rule({name = "kitty-noblur", match = { class = "^(kitty)$" }, no_blur = true, })
 hl.window_rule({name = "kitty-nvim-blur", match = { class = "^(kitty)$", title = ".*nvim.*" }, no_blur = true,})
 hl.window_rule({

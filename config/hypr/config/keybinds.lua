@@ -8,8 +8,8 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("dolphin"))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
-hl.bind(mainMod .. " + O", hl.dsp.layout("togglesplit")) -- dwindle only
-hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("rofi -show drun -theme ~/.config/rofi/config.rasi"))
+hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = 0 }))
+hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("rofi -show drun"))
 hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 -- Cambiar de escritorio
 for i = 1, 9 do
@@ -36,11 +36,14 @@ hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + up", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + down", hl.dsp.focus({ direction = "down" }))
-
+-- Captura
+hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd("/home/arch/screenshot.sh full"))
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("/home/arch/screenshot.sh edit"))
 -- Rofi
 hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("~/.config/rofi/menus/powermenu"))
 -- Rofi wallpaper
 hl.bind(mainMod .. " + A", hl.dsp.exec_cmd("~/.config/rofi/menus/wallpaperselect.sh"))
+hl.bind(mainMod .. " + SHIFT + A", hl.dsp.exec_cmd("~/.config/rofi/scripts/color-picker-rofi.sh"))
 -- swaync
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("swaync-client -t"))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("swaync-client -rs"))
@@ -56,6 +59,6 @@ hl.bind(mainMod .. " + comma", hl.dsp.layout("move -col"))
 hl.bind(mainMod .. " + SHIFT + PERIOD", hl.dsp.layout("swapcol r"))
 hl.bind(mainMod .. " + SHIFT + comma", hl.dsp.layout("swapcol l"))
 
-hl.bind(mainMod .. " + F", hl.dsp.layout("fit_into_view"))
-hl.bind(mainMod .. " + SHIFT + F", hl.dsp.layout("fit expand"))
+hl.bind(mainMod .. " + O", hl.dsp.layout("fit_into_view"))
+hl.bind(mainMod .. " + SHIFT + O", hl.dsp.layout("fit expand"))
 hl.bind(mainMod .. " + I", hl.dsp.layout("inhibit_scroll"))
