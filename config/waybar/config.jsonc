@@ -1,12 +1,12 @@
 {
     "layer": "top",
-    "position": "left",
+    "position": "right",
     "width": 54,
     "spacing": 0,
     "margin-top": 4,
     "margin-bottom": 4,
     "reload_style_on_change": true,
-
+    
     "modules-left": [
       "group/clock-group",
       "group/utils-group"
@@ -33,7 +33,7 @@
     },
     "group/status-group": {
         "orientation": "inherit",
-        "modules": ["network", "backlight"]
+        "modules": ["network", "custom/hyprsunset", "backlight"]
     },
     "group/sys-group": {
         "orientation": "inherit",
@@ -82,18 +82,17 @@
         "7": "Υ",
         "8": "Ξ",
         "9": "Ζ"
-        },
-        "persistent-workspaces": {
-          "*": 2
         }
     },
 
+
     "network": {
-        "format-wifi": " ♜ ",
-        "format-ethernet": "♞ ",
-        "format-disconnected": "♟ ",
-        "tooltip-format": "{essid} ({signalStrength}%)"
+        "interface": "wlan0",
+        "format-wifi": "{icon}",
+        "format-icons": ["¼", "⅓", "½", "⅔", "1"],
+        "tooltip-format": "SSID: {essid} {signalStrength}%"
     },
+
 
     "backlight": {
         "format": "{icon} {percent}",
@@ -118,5 +117,11 @@
     "custom/distro-logo": {
         "format": "",
         "tooltip": false
+    },
+    "custom/hyprsunset": {
+      "exec": "~/.config/waybar/scripts/hyprsunset-status.sh",
+      "on-click": "~/.config/waybar/scripts/hyprsunset-toggle.sh",
+      "signal": 8,
+      "return-type": "json"
     }
 }

@@ -16,9 +16,9 @@ window#waybar {
     transition-property: background-color;
     transition-duration: 0.5s;
     border-radius: 10px;
-    border: 2px solid mix(@accent, @background, 0.45);
+    border: 2px solid mix(@primary, @background, 0.45);
     background: alpha(@background, 0.7);
-    color: mix(@accent, @foreground, 0.55);
+    color: mix(@primary, @foreground, 0.55);
 }
 
 .modules-left {
@@ -45,7 +45,7 @@ window#waybar {
 #logo-group {
     border-radius: 5px;
     margin: 2px 3px;
-    background: alpha(mix(@accent, @background, 0.75), 0.35);
+    background: alpha(mix(@primary, @background, 0.75), 0.35);
 }
 
 #clock-group   { margin-top: 10px; }
@@ -74,7 +74,7 @@ window#waybar {
     font-size: 16px;
     font-weight: 600;
     padding: 6px 0;
-    color: mix(@accent, @foreground, 0.5);
+    color: mix(@primary, @foreground, 0.5);
 }
 
 #pulseaudio {
@@ -106,8 +106,8 @@ window#waybar {
 }
 
 #workspaces button.active {
-    background: alpha(mix(@accent, @background, 0.55), 0.5);
-    color: mix(@accent, @foreground, 0.55); 
+    background: alpha(mix(@primary, @background, 0.55), 0.5);
+    color: mix(@primary, @foreground, 0.55); 
 }
 
 #network {
@@ -134,4 +134,18 @@ window#waybar {
     font-size: 14px;
     padding: 4px 0;
     color: mix(@primary, @foreground, 0.5);
+}
+#custom-hyprsunset {
+    color: alpha(@foreground, 0.85);
+    min-width: 40px;
+    font-size: 13px;
+    padding: 4px 0;
+}
+
+#custom-hyprsunset.active {
+    color: @accent;
+}
+
+#custom-hyprsunset.inactive {
+    color: alpha(@foreground, 0.85);
 }
